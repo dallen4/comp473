@@ -1,8 +1,8 @@
 package facility;
 
-public class FacilityAdmin {
+public class Staff {
 
-	public FacilityAdmin() {
+	public Staff() {
 		// TODO Auto-generated constructor stub
 	}
 
