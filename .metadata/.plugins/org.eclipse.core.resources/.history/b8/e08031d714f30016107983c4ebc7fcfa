@@ -1,0 +1,14 @@
+package facility;
+
+import java.util.List;
+import facility.Detail;
+
+public class Facility {
+
+	public Facility() {
+		// TODO Auto-generated constructor stub
+	}
+	
+	private List<Detail> Details = new List<Detail>();
+
+}

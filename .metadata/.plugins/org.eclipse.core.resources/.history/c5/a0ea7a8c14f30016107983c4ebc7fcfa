@@ -1,0 +1,9 @@
+package facility;
+
+public class Facilities {
+
+	public Facilities() {
+		// TODO Auto-generated constructor stub
+	}
+
+}
