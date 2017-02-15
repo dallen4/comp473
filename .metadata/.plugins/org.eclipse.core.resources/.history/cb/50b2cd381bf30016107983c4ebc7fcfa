@@ -37,26 +37,7 @@ public class Facility {
 		}
 	}
 	
-	public Integer getCurrCapacity() {
-		return currCapacity;
-	}
-	
-	public boolean setCurrCapacity(Integer newCap) {
-		this.currCapacity = newCap;
-		
-		if (this.currCapacity == newCap) {
-			return true;
-		} else {
-			return false;
-		}
-	}
-	
-//	FINISH
-	public void getFacilityInformation() {
-		return;
-	}
-	
-	public Integer requestAvailableCapacity () {
+	public Integer getAvailableCapacity () {
 		return potentialCapacity - currCapacity;
 	}
 	

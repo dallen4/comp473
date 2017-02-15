@@ -51,11 +51,6 @@ public class Facility {
 		}
 	}
 	
-//	FINISH
-	public void getFacilityInformation() {
-		return;
-	}
-	
 	public Integer requestAvailableCapacity () {
 		return potentialCapacity - currCapacity;
 	}

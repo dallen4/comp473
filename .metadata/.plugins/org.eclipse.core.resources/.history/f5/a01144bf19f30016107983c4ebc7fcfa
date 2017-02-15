@@ -2,12 +2,13 @@ package facility;
 
 import java.util.List;
 import java.util.Vector;
+import facility.Detail;
 
 public class Facility {
 	
 	private String name;
 	private Integer currCapacity;
-	private Integer potentialCapacity;
+	private Integer availableCapacity;
 	private List<String> Details = new Vector<String>();
 	
 	public Facility() {
@@ -37,27 +38,8 @@ public class Facility {
 		}
 	}
 	
-	public Integer getCurrCapacity() {
-		return currCapacity;
-	}
-	
-	public boolean setCurrCapacity(Integer newCap) {
-		this.currCapacity = newCap;
-		
-		if (this.currCapacity == newCap) {
-			return true;
-		} else {
-			return false;
-		}
-	}
-	
-//	FINISH
-	public void getFacilityInformation() {
-		return;
-	}
-	
-	public Integer requestAvailableCapacity () {
-		return potentialCapacity - currCapacity;
+	public Integer getAvailableCapacity () {
+		return availableCapacity;
 	}
 	
 	public void addFacilityDetail(String newDetail) {

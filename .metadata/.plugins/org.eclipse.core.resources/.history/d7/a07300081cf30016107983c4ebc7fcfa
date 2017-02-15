@@ -1,0 +1,10 @@
+package maintenance;
+
+import maintenance.Request;
+
+public interface Maintenance {
+	
+	public Request makeFacilityMaintRequest() {
+		return new Request();
+	}
+}

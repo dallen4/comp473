@@ -15,10 +15,12 @@ public class Facilities {
 	
 	
 	public boolean addNewFacility(Facility newFacility) {
-		return Facilities.add(newFacility);
-	}
-	
-	public boolean removeFacility (Facility delFacility) {
-		return Facilities.remove(delFacility);
+		Facilities.add(newFacility);
+		
+		if (Facilities.contains(newFacility)) {
+			return true;
+		} else {
+			return false;
+		}
 	}
 }

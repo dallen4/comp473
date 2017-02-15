@@ -1,5 +1,6 @@
 package maintenance;
 
+import System.out;
 import java.util.List;
 import java.util.Vector;
 
@@ -34,7 +35,7 @@ public class Maintenance {
 	public List<Request> listMaintRequests() {
 		for (int i = 0; i < Requests.size(); i++) {
 			Request temp = Requests.get(i);
-			System.out.println(temp.getID());
+			console.log(temp.getID());
 		}
 		return Requests;
 	}

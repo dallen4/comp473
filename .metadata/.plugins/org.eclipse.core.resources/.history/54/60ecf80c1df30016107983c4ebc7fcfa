@@ -1,0 +1,26 @@
+package maintenance;
+
+import maintenance.Request;
+
+public class Maintenance {
+	
+	public Request makeFacilityMaintRequest() {
+		return new Request();
+	}
+	
+	public Schedule scheduleMaintenance() {
+		return new Schedule();
+	}
+	
+	public double calcMaintenanceCostForFacility() {
+		return 0;
+	}
+	
+	public double calcProblemRateForFacility() {
+		return 0;
+	}
+	
+	public double calcDowntimeForFacility() {
+		return 0;
+	}
+}
