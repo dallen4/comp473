@@ -8,7 +8,6 @@ public class Facility {
 	
 	private String name;
 	private Integer capacity;
-	private Integer availableCapacity;
 	private List<String> Details = new Vector<String>();
 	
 	public Facility() {
@@ -36,10 +35,6 @@ public class Facility {
 		} else {
 			return false;
 		}
-	}
-	
-	public Integer getAvailableCapacity () {
-		return availableCapacity;
 	}
 	
 	public void addFacilityDetail(String newDetail) {

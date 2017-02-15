@@ -1,11 +1,26 @@
 package facility;
 
+import java.util.List;
+import java.util.Vector;
+
 import facility.Facility;
 
-public class Facilities<Facility> {
+public class Facilities {
+	
+	private List<Facility> Facilities = new Vector<Facility>();
 
 	public Facilities() {
 		// TODO Auto-generated constructor stub
 	}
-
+	
+	
+	public boolean addNewFacility(Facility newFacility) {
+		Facilities.add(newFacility);
+		
+		if (Facilities.contains(newFacility)) {
+			return true;
+		} else {
+			return false;
+		}
+	}
 }
