@@ -1,0 +1,11 @@
+package facility;
+
+import model.FacilityUse;
+
+public class FacilityUser implements FacilityUse {
+
+	public FacilityUser() {
+		// TODO Auto-generated constructor stub
+	}
+
+}
