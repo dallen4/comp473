@@ -1,8 +1,12 @@
 package model.facility;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.List;
 import java.util.Vector;
 import java.util.Calendar;
+import java.util.Date;
+import java.text.DateFormat;
 
 import model.maintenance.*;
 import model.use.IFacilityUse;
@@ -122,8 +126,32 @@ public class Facility implements IFacility, IMaintenance, IFacilityUse {
 
 	//REQUIRED METHOD
 	@Override
-	public Schedule scheduleMaintenance() {
-		// TODO Auto-generated method stub
+	public Calendar scheduleMaintenance(int maintID, String maintenanceDate) {
+		for (int i = 0; i < maintRequests.size(); i++) {
+			if (maintID == maintRequests.get(i).getID()) {
+				String dateString = maintenanceDate;
+
+// format for year and month
+				SimpleDateFormat format = new SimpleDateFormat("yyyyMM");
+// parse the date
+				Date date = null;
+				try {
+					date = format.parse(dateString);
+				} catch (ParseException e) {
+					e.printStackTrace();
+				}
+
+				Calendar cal = Calendar.getInstance();
+				cal.setTime(date);
+// make it the last day of that month
+				cal.set(Calendar.DATE, cal.getActualMaximum(Calendar.DATE));
+
+				System.out.println(cal.getTime());
+				maintRequests.get(i).setDateScheduled(cal);
+				return cal;
+			}
+		}
+		System.out.println("ID not found");
 		return null;
 	}
 
@@ -157,6 +185,7 @@ public class Facility implements IFacility, IMaintenance, IFacilityUse {
 		ratio = complete/maintRequests.size();
 		
 		System.out.println("Problem Rate (ratio of completed to problems/requests submitted: " + ratio + "\nOf " + incomplete + " incompleted requests, " + scheduled + " have been scheduled.");
+		return ratio;
 	}
 
 	//REQUIRED METHOD
@@ -169,10 +198,13 @@ public class Facility implements IFacility, IMaintenance, IFacilityUse {
 	//REQUIRED METHOD
 	@Override
 	public List<Request> listMaintRequests() {
+
 		for (int i = 0; i < maintRequests.size(); i++) {
 			Request temp = maintRequests.get(i);
-			System.out.println(temp.getID());
-			System.out.println(temp.getDesc());
+			System.out.println("ID: " + temp.getID());
+			System.out.println("Description: " + temp.getDesc());
+			System.out.println("Complete: " + temp.getCompleted());
+			System.out.println("Scheduled for: " + temp.getDateScheduled());
 		}
 		return maintRequests;
 	}
@@ -239,4 +271,16 @@ public class Facility implements IFacility, IMaintenance, IFacilityUse {
 		return 0;
 	}
 
+	public boolean completeMaintRequest(int maintID){
+		for (int i = 0; i<maintRequests.size(); i++){
+			if (maintID == maintRequests.get(i).getID()){
+				maintRequests.get(i).setCompleted(maintID,true);}
+				return true;
+			}
+			System.out.println("ID not found");
+			return false;
+		}
+
+
 }
+

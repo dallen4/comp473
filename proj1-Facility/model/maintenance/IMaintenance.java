@@ -1,13 +1,13 @@
 package model.maintenance;
 
+import java.util.Calendar;
 import java.util.List;
 
 public interface IMaintenance {
 	
 	//REQUIRED METHODS
-	public Request makeFacilityMaintRequest();
 	public Request makeFacilityMaintRequest(int reqID, String reqDesc);
-	public Schedule scheduleMaintenance();
+	public Calendar scheduleMaintenance(int maintID, String maintenanceDate);
 	public double calcMaintenanceCostForFacility();
 	public double calcProblemRateForFacility();
 	public double calcDownTimeForFacility();

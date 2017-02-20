@@ -3,9 +3,15 @@ package view;
 import model.facility.Facilities;
 import model.facility.Facility;
 
+import java.util.Calendar;
+import java.util.GregorianCalendar;
+
 public class Main {
 
 	public static void main(String[] args) {
+
+		Calendar calendar = new GregorianCalendar();
+
 		System.out.println("Starting Facility Management System... \n");
 
 		// Creating our facilities 'Loyola'
@@ -54,13 +60,26 @@ public class Main {
 		
 //		TODO REDO
 		// Adding a facility request and printing it
+		Damen.makeFacilityMaintRequest(1,"Broken Sink");
+		Damen.makeFacilityMaintRequest(2,"Speakers not working");
 		System.out.println("Creating Facility Maintenance Request...");
-//		DamenMaint.makeFacilityMaintRequest("Broken Sink");
+
 		System.out.println("");
 				
-		System.out.println("Listing Facility Problems for Facility " + Damen.getID() + ":");
-//		DamenMaint.listFacilityProblems();
-		
+		System.out.println("Listing Facility Problems for Facility " + Damen.getID() + " " + Damen.getName() + ":");
+		System.out.println(Damen.listMaintRequests());
+//		DamenMaint.listFacilityProblems()
+
+		System.out.println("");
+
+		// Complete a maintenance request
+		Damen.completeMaintRequest(1);
+		System.out.println(Damen.listMaintRequests());
+		//
+
+		// Schedule a maintenance request
+		Damen.scheduleMaintenance(1, "201705");
+		System.out.println(Damen.listMaintRequests());
 		
 		//END TESTS OF MAINTENANCE INTERFACE REQUIREMENTS
 		

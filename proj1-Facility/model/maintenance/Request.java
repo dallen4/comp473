@@ -1,6 +1,9 @@
 package model.maintenance;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
 
 public class Request {
 	
@@ -10,6 +13,7 @@ public class Request {
 	private boolean scheduled;
 	private Calendar dateCreated;
 	private Calendar dateScheduled = null;
+
 	//NEED TO IMPLEMENT COST CALCULATION
 
 	public Request(int id, String description) {
@@ -68,7 +72,7 @@ public class Request {
 		return completed;
 	}
 	
-	public boolean setCompleted (boolean newState) {
+	public boolean setCompleted (int ID, boolean newState) {
 		this.completed = newState;
 		
 		if (completed == newState) {
