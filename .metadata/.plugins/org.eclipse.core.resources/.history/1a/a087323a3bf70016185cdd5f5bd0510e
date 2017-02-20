@@ -45,12 +45,6 @@ public class Facility implements IFacility {
 	
 	public boolean setID (int id) {
 		this.id = id;
-		
-		if (this.id == id) {
-			return true;
-		} else {
-			return false;
-		}
 	}
 	
 	public String getName() {

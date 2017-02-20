@@ -7,7 +7,7 @@ import model.maintenance.Maintenance;
 public class Main {
 
 	public static void main(String[] args) {
-		System.out.println("Starting Facility Management System... \n");
+		// TODO Auto-generated method stub
 
 		// Creating our facilities 'Loyola'
 		Facilities Loyola = new Facilities();
@@ -33,11 +33,7 @@ public class Main {
 		// Creating a Maintenance object for Damen
 		Maintenance DamenMaint = new Maintenance(1, "Damen");
 		// Adding a facility request and printing it
-		System.out.println("Creating Facility Maintenance Request...");
 		DamenMaint.makeFacilityMaintRequest("Broken Sink");
-		System.out.println("");
-		
-		System.out.println("Listing Facility Problems for Facility " + Damen.getID() + ": \n");
 		DamenMaint.listFacilityProblems();
 
 

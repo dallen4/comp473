@@ -7,7 +7,7 @@ public class Facility implements IFacility {
 	
 	private int id;
 	private String name;
-	private Integer currCapacity = 0;
+	private Integer currCapacity;
 	private Integer potentialCapacity;
 	private List<String> Details = new Vector<String>();
 	private List<Inspection> Inspections = new Vector<Inspection>();
@@ -38,20 +38,6 @@ public class Facility implements IFacility {
 	
 	
 	//GETTERS & SETTERS
-	
-	public int getID() {
-		return id;
-	}
-	
-	public boolean setID (int id) {
-		this.id = id;
-		
-		if (this.id == id) {
-			return true;
-		} else {
-			return false;
-		}
-	}
 	
 	public String getName() {
 		return name;
