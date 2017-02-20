@@ -22,13 +22,7 @@ public class Facilities {
 	}
 	
 	//REQUIRED METHOD
-	public List<Facility> listFacilities() {
-		List<Facility> facList = new Vector<Facility>();
-		
-		for (int i = 0; i < Facilities.size(); i++) {
-			facList.add(Facilities.get(i));
-			System.out.println(facList.get(i).getName());
-		}
-		return facList;
+	public List<String> listFacilities() {
+		return new Vector<String>();
 	}
 }

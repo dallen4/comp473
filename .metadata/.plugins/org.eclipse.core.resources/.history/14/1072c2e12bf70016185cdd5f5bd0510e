@@ -14,24 +14,18 @@ public class Facility implements IFacility {
 	
 	//CONSTRUCTORS
 	public Facility(int id, String name, Integer potentialCapacity) {
-		this.id = id;
-		this.name = name;
-		this.potentialCapacity = potentialCapacity;
+		// TODO Auto-generated constructor stub
 	}
 	
 	public Facility(int id, String name) {
-		this.id = id;
-		this.name = name;
+		// TODO Auto-generated constructor stub
 	}
 	
 	public Facility(int id, String name, Integer potentialCapacity, List<String> Details) {
-		this.id = id;
-		this.name = name;
-		this.potentialCapacity = potentialCapacity;
-		this.Details = Details;
+		// TODO Auto-generated constructor stub
 	}
 	
-	//DEFAULT CONSTRUCTOR
+	//DEFAULT CONSTRUCTORS
 	public Facility() {
 		// TODO Auto-generated constructor stub
 	}
@@ -69,9 +63,8 @@ public class Facility implements IFacility {
 	
 	//REQUIRED METHOD
 	public String getFacilityInformation() {
-		String info = id + "\n" + name  + "\n" + currCapacity + "\n" + Details;
-		System.out.println(info);
-		return info;
+		System.out.println(id + name + currCapacity + Details);
+		return "";
 	}
 	
 	//REQUIRED METHOD

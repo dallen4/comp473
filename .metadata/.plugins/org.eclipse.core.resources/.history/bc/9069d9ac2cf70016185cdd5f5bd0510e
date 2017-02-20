@@ -22,7 +22,7 @@ public class Facilities {
 	}
 	
 	//REQUIRED METHOD
-	public List<Facility> listFacilities() {
+	public List<String> listFacilities() {
 		List<Facility> facList = new Vector<Facility>();
 		
 		for (int i = 0; i < Facilities.size(); i++) {

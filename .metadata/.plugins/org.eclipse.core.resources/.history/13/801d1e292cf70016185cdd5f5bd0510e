@@ -31,7 +31,7 @@ public class Facility implements IFacility {
 		this.Details = Details;
 	}
 	
-	//DEFAULT CONSTRUCTOR
+	//DEFAULT CONSTRUCTORS
 	public Facility() {
 		// TODO Auto-generated constructor stub
 	}

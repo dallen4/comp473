@@ -6,7 +6,7 @@ import java.util.Vector;
 
 public class Cost {
 
-	private List<Integer> allCosts = new Vector<Integer>();
+	private List<Integer> allCosts = new Vector();
 
 	// Gets the vector of all the costs
 	public List<Integer> getCost() { return allCosts;}

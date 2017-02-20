@@ -176,19 +176,6 @@
       "micro": 0,
       "qualifier": ""
     },
-    "jarFileFingerprint": "7c681fa60738d4982bf38e6d04ab887d6494d512",
-    "jarFileModificationDate": "2015-07-06T15:03:47-05:00",
-    "location": "/System/Library/Java/Extensions/jai_core.jar",
-    "javaRuntime": true
-  },
-  {
-    "symbolicName": "jre",
-    "version": {
-      "major": 1,
-      "minor": 0,
-      "micro": 0,
-      "qualifier": ""
-    },
     "jarFileFingerprint": "6f4c37312a86a147f7e22a9a7f9d077f8366923f",
     "jarFileModificationDate": "2015-04-10T13:47:41-05:00",
     "location": "/Library/Java/JavaVirtualMachines/jdk1.7.0_79.jdk/Contents/Home/jre/lib/ext/zipfs.jar",
@@ -202,9 +189,22 @@
       "micro": 0,
       "qualifier": ""
     },
-    "jarFileFingerprint": "20fbebffa7e607809c4fb663e45cad1c225f6579",
-    "jarFileModificationDate": "2015-07-06T15:04:22-05:00",
-    "location": "/System/Library/Java/Extensions/j3dutils.jar",
+    "jarFileFingerprint": "7c681fa60738d4982bf38e6d04ab887d6494d512",
+    "jarFileModificationDate": "2015-07-06T15:03:47-05:00",
+    "location": "/System/Library/Java/Extensions/jai_core.jar",
+    "javaRuntime": true
+  },
+  {
+    "symbolicName": "jre",
+    "version": {
+      "major": 1,
+      "minor": 0,
+      "micro": 0,
+      "qualifier": ""
+    },
+    "jarFileFingerprint": "d2f80c5639cd20ec20c783cd51467faea12b8d27",
+    "jarFileModificationDate": "2015-04-10T13:47:41-05:00",
+    "location": "/Library/Java/JavaVirtualMachines/jdk1.7.0_79.jdk/Contents/Home/jre/lib/ext/dnsns.jar",
     "javaRuntime": true
   },
   {
@@ -228,9 +228,9 @@
       "micro": 0,
       "qualifier": ""
     },
-    "jarFileFingerprint": "d2f80c5639cd20ec20c783cd51467faea12b8d27",
-    "jarFileModificationDate": "2015-04-10T13:47:41-05:00",
-    "location": "/Library/Java/JavaVirtualMachines/jdk1.7.0_79.jdk/Contents/Home/jre/lib/ext/dnsns.jar",
+    "jarFileFingerprint": "20fbebffa7e607809c4fb663e45cad1c225f6579",
+    "jarFileModificationDate": "2015-07-06T15:04:22-05:00",
+    "location": "/System/Library/Java/Extensions/j3dutils.jar",
     "javaRuntime": true
   },
   {
@@ -267,9 +267,9 @@
       "micro": 0,
       "qualifier": ""
     },
-    "jarFileFingerprint": "d20dc5e3a5fe4ee9c12e70a864cabeb628b9e7ca",
-    "jarFileModificationDate": "2015-07-06T15:04:22-05:00",
-    "location": "/System/Library/Java/Extensions/vecmath.jar",
+    "jarFileFingerprint": "c23bcc4ef6150ef6297efbd0bc15271c9106949f",
+    "jarFileModificationDate": "2015-07-06T15:05:16-05:00",
+    "location": "/System/Library/Java/Extensions/dns_sd.jar",
     "javaRuntime": true
   },
   {
@@ -280,9 +280,9 @@
       "micro": 0,
       "qualifier": ""
     },
-    "jarFileFingerprint": "c23bcc4ef6150ef6297efbd0bc15271c9106949f",
-    "jarFileModificationDate": "2015-07-06T15:05:16-05:00",
-    "location": "/System/Library/Java/Extensions/dns_sd.jar",
+    "jarFileFingerprint": "d20dc5e3a5fe4ee9c12e70a864cabeb628b9e7ca",
+    "jarFileModificationDate": "2015-07-06T15:04:22-05:00",
+    "location": "/System/Library/Java/Extensions/vecmath.jar",
     "javaRuntime": true
   }
 ]

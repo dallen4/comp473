@@ -14,24 +14,18 @@ public class Facility implements IFacility {
 	
 	//CONSTRUCTORS
 	public Facility(int id, String name, Integer potentialCapacity) {
-		this.id = id;
-		this.name = name;
-		this.potentialCapacity = potentialCapacity;
+		// TODO Auto-generated constructor stub
 	}
 	
 	public Facility(int id, String name) {
-		this.id = id;
-		this.name = name;
+		// TODO Auto-generated constructor stub
 	}
 	
 	public Facility(int id, String name, Integer potentialCapacity, List<String> Details) {
-		this.id = id;
-		this.name = name;
-		this.potentialCapacity = potentialCapacity;
-		this.Details = Details;
+		// TODO Auto-generated constructor stub
 	}
 	
-	//DEFAULT CONSTRUCTOR
+	//DEFAULT CONSTRUCTORS
 	public Facility() {
 		// TODO Auto-generated constructor stub
 	}

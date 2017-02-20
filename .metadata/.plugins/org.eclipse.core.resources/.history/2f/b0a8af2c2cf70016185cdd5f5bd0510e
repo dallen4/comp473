@@ -43,7 +43,7 @@ public class Maintenance {
 			String temp = Problems.get(i);
 			System.out.println(temp);
 		}
-		return Problems;
+		return new Vector<String>();
 	}
 }
 
