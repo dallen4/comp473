@@ -1,0 +1,5 @@
+package model.use;
+
+public interface IFacilityUSe {
+
+}

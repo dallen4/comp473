@@ -1,0 +1,8 @@
+package model.facility;
+
+public interface IFacility {
+	
+	public String getFacilityInformation();
+	public int requestAvailableCapacity();
+	public void addFacilityDetail();
+}

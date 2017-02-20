@@ -1,0 +1,6 @@
+package model.facility;
+
+public interface IFacility {
+	
+	public String getFacilityInformation(); 
+}

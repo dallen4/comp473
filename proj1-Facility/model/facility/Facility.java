@@ -3,25 +3,35 @@ package model.facility;
 import java.util.List;
 import java.util.Vector;
 
-public class Facility {
+public class Facility implements IFacility {
 	
+	private int id;
 	private String name;
 	private Integer currCapacity;
 	private Integer potentialCapacity;
 	private List<String> Details = new Vector<String>();
+	private List<Inspection> Inspections = new Vector<Inspection>();
 	
+	//CONSTRUCTORS
+	public Facility(int id, String name, Integer potentialCapacity) {
+		// TODO Auto-generated constructor stub
+	}
+	
+	public Facility(int id, String name) {
+		// TODO Auto-generated constructor stub
+	}
+	
+	public Facility(int id, String name, Integer potentialCapacity, List<String> Details) {
+		// TODO Auto-generated constructor stub
+	}
+	
+	//DEFAULT CONSTRUCTORS
 	public Facility() {
 		// TODO Auto-generated constructor stub
 	}
 	
-	public Facility(String name) {
-		this.name = name;
-	}
 	
-	public Facility (String name, List<String> Details) {
-		this.name = name;
-		this.Details = Details;
-	}
+	//GETTERS & SETTERS
 	
 	public String getName() {
 		return name;
@@ -51,18 +61,27 @@ public class Facility {
 		}
 	}
 	
-//	FINISH
-	public void getFacilityInformation() {
-		return;
+	//REQUIRED METHOD
+	public String getFacilityInformation() {
+		return "";
 	}
 	
-	public Integer requestAvailableCapacity () {
+	//REQUIRED METHOD
+	public int requestAvailableCapacity () {
 		return potentialCapacity - currCapacity;
 	}
 	
+	//REQUIRED METHOD
 	public void addFacilityDetail(String newDetail) {
 		Details.add(newDetail);
 		return;
+	}
+
+	//REQUIRED METHOD
+	@Override
+	public void addFacilityDetail() {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

@@ -8,7 +8,11 @@ import model.maintenance.Request;
 public class Maintenance {
 	
 	private List<Request> Requests = new Vector<Request>();
-	private List
+	private List<String> Problems = new Vector<String>();
+	
+	public Maintenance() {
+//		CONSTRUCTOR
+	}
 	
 	public Request makeFacilityMaintRequest() {
 		return new Request();
