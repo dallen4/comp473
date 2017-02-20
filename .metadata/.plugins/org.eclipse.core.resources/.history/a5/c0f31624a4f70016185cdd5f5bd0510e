@@ -10,7 +10,6 @@ public class Request {
 	private boolean scheduled;
 	private Calendar dateCreated;
 	private Calendar dateScheduled = null;
-	//NEED TO IMPLEMENT COST CALCULATION
 
 	public Request(int id, String description) {
 		this.id = id;
@@ -23,7 +22,7 @@ public class Request {
 	// DEFAULT CONSTRUCTOR
 	public Request() {
 		this.id = 0000;
-		this.description = "N/A";
+		this.description = "No description provided for this request.";
 		scheduled = false;
 		completed = false;
 		dateCreated = Calendar.getInstance();

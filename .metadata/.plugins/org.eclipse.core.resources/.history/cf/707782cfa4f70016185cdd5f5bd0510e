@@ -10,7 +10,7 @@ public class Request {
 	private boolean scheduled;
 	private Calendar dateCreated;
 	private Calendar dateScheduled = null;
-	//NEED TO IMPLEMENT COST CALCULATION
+	private double Cost;
 
 	public Request(int id, String description) {
 		this.id = id;

@@ -135,28 +135,10 @@ public class Facility implements IFacility, IMaintenance, IFacilityUse {
 	}
 
 	//REQUIRED METHOD
-	//Calculates ratio of problems/requests completed versus 
 	@Override
 	public double calcProblemRateForFacility() {
-		double complete = 0;
-		double incomplete = 0;
-		double scheduled = 0;
-		double ratio;
-		
-		for (int i = 0; i < maintRequests.size(); i++) {
-			if (maintRequests.get(i).getCompleted()) {
-				complete++;
-			} else {				
-				incomplete++;
-				if (maintRequests.get(i).getScheduled()) {
-					scheduled++;
-				}
-			}
-		}
-		
-		ratio = complete/maintRequests.size();
-		
-		System.out.println("Problem Rate (ratio of completed to problems/requests submitted: " + ratio + "\nOf " + incomplete + " incompleted requests, " + scheduled + " have been scheduled.");
+		// TODO Auto-generated method stub
+		return 0;
 	}
 
 	//REQUIRED METHOD

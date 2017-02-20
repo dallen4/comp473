@@ -6,7 +6,6 @@ public interface IMaintenance {
 	
 	//REQUIRED METHODS
 	public Request makeFacilityMaintRequest();
-	public Request makeFacilityMaintRequest(int reqID, String reqDesc);
 	public Schedule scheduleMaintenance();
 	public double calcMaintenanceCostForFacility();
 	public double calcProblemRateForFacility();
@@ -14,5 +13,6 @@ public interface IMaintenance {
 	public List<Request> listMaintRequests();
 	public List<String> listMaintenance();
 	public List<String> listFacilityProblems();
+	Request makeFacilityMaintRequest(int reqID, String reqDesc);
 	
 }
