@@ -3,12 +3,11 @@ package model.maintenance;
 import java.util.List;
 import java.util.Vector;
 
-import model.maintenance.Request;
-
 public class Maintenance {
 	
 	private List<Request> Requests = new Vector<Request>();
 	private List<String> Problems = new Vector<String>();
+
 	
 	public Maintenance() {
 //		CONSTRUCTOR
@@ -21,10 +20,6 @@ public class Maintenance {
 	//creates new Maintenance Schedule
 	public Schedule scheduleMaintenance() {
 		return new Schedule();
-	}
-	
-	public double calcMaintenanceCostForFacility() {
-		return 0;
 	}
 	
 	public double calcProblemRateForFacility() {
@@ -44,6 +39,11 @@ public class Maintenance {
 	}
 	
 	public List<String> listFacilityProblems() {
+		for (int i = 0; i < Problems.size(); i++) {
+			String temp = Problems.get(i);
+			System.out.println(temp);
+		}
 		return new Vector<String>();
 	}
 }
+

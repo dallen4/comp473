@@ -63,6 +63,7 @@ public class Facility implements IFacility {
 	
 	//REQUIRED METHOD
 	public String getFacilityInformation() {
+		System.out.println(id + name + currCapacity + Details);
 		return "";
 	}
 	
