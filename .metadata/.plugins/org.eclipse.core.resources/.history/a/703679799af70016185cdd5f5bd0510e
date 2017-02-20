@@ -1,0 +1,167 @@
+package model.facility;
+
+import java.util.List;
+import java.util.Vector;
+
+import model.maintenance.*;
+
+public class Facility implements IFacility, IMaintenance {
+	
+	private int id;
+	private String name;
+	private int currCapacity = 0;
+	private int potentialCapacity;
+	private List<String> Details = new Vector<String>();
+	private List<Inspection> Inspections = new Vector<Inspection>();
+	private List<Request> maintRequests = new Vector<Request>();
+	private List<String> facilityProblems = new Vector<String>();
+	
+	//CONSTRUCTORS
+	public Facility(int id, String name) {
+		this.id = id;
+		this.name = name;
+	}
+	
+	public Facility(int id, String name, int potentialCapacity) {
+		this.id = id;
+		this.name = name;
+		this.potentialCapacity = potentialCapacity;
+	}
+	
+	public Facility(int id, String name, int potentialCapacity, List<String> Details) {
+		this.id = id;
+		this.name = name;
+		this.potentialCapacity = potentialCapacity;
+		this.Details = Details;
+	}
+	
+	//DEFAULT CONSTRUCTOR
+	public Facility() {
+		// TODO Auto-generated constructor stub
+	}
+	
+	
+	//GETTERS & SETTERS
+	
+	public int getID() {
+		return id;
+	}
+	
+	public boolean setID (int id) {
+		this.id = id;
+		
+		if (this.id == id) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+	
+	public String getName() {
+		return name;
+	}
+	
+	public boolean setName(String newName) {
+		this.name = newName;
+		
+		if (this.name == newName) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+	
+	public Integer getCurrCapacity() {
+		return currCapacity;
+	}
+	
+	public boolean setCurrCapacity(Integer newCap) {
+		this.currCapacity = newCap;
+		
+		if (this.currCapacity == newCap) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+	
+	//REQUIRED METHOD
+	public String getFacilityInformation() {
+		String info = "ID: " + id + "\nName: " + name  + "\nCapacity: " + potentialCapacity + "\nAvailable Capacity: " + requestAvailableCapacity() + "\nDetails: " + Details;
+		System.out.println(info);
+		return info;
+	}
+	
+	//REQUIRED METHOD
+	public int requestAvailableCapacity () {
+		return potentialCapacity - currCapacity;
+	}
+	
+	//REQUIRED METHOD
+	public void addFacilityDetail(String newDetail) {
+		Details.add(newDetail);
+		return;
+	}
+
+	//REQUIRED METHOD
+	@Override
+	public void addFacilityDetail() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public Request makeFacilityMaintRequest() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Schedule scheduleMaintenance() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public double calcMaintenanceCostForFacility() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public double calcProblemRateForFacility() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public double calcDownTimeForFacility() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public List<Request> listMaintRequests() {
+		for (int i = 0; i < maintRequests.size(); i++) {
+			Request temp = maintRequests.get(i);
+			System.out.println(temp.getID());
+		}
+		return maintRequests;
+	}
+
+	@Override
+	public List<String> listMaintenance() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<String> listFacilityProblems() {
+		for (int i = 0; i < facilityProblems.size(); i++) {
+			String temp = facilityProblems.get(i);
+			System.out.println(temp);
+		}
+		return facilityProblems;
+	}
+
+}

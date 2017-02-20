@@ -2,15 +2,21 @@ package model.facility;
 
 import java.util.List;
 import java.util.Vector;
+import java.util.Calendar;
 
-public class Facility implements IFacility {
+import model.maintenance.*;
+import model.use.IFacilityUse;
+
+public class Facility implements IFacility, IMaintenance, IFacilityUse {
 	
 	private int id;
 	private String name;
-	private Integer currCapacity = 0;
-	private Integer potentialCapacity;
+	private int currCapacity = 0;
+	private int potentialCapacity;
+	private Schedule facilityEvents = new Schedule(Calendar.getInstance());
 	private List<String> Details = new Vector<String>();
 	private List<Inspection> Inspections = new Vector<Inspection>();
+	private List<Request> maintRequests = new Vector<Request>();
 	
 	//CONSTRUCTORS
 	public Facility(int id, String name) {
@@ -100,10 +106,122 @@ public class Facility implements IFacility {
 	}
 
 	//REQUIRED METHOD
-	@Override
 	public void addFacilityDetail() {
 		// TODO Auto-generated method stub
 		
+	}
+	
+	//end IFacility methods
+	
+	
+	//begin IMaintenance methods
+
+	//REQUIRED METHOD
+	@Override
+	public Request makeFacilityMaintRequest() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	//REQUIRED METHOD
+	@Override
+	public Schedule scheduleMaintenance() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	//REQUIRED METHOD
+	@Override
+	public double calcMaintenanceCostForFacility() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	//REQUIRED METHOD
+	@Override
+	public double calcProblemRateForFacility() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	//REQUIRED METHOD
+	@Override
+	public double calcDownTimeForFacility() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	//REQUIRED METHOD
+	@Override
+	public List<Request> listMaintRequests() {
+		for (int i = 0; i < maintRequests.size(); i++) {
+			Request temp = maintRequests.get(i);
+			System.out.println(temp.getID());
+			System.out.println(temp.getDesc());
+		}
+		return maintRequests;
+	}
+
+	//REQUIRED METHOD
+	@Override
+	public List<String> listMaintenance() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	//REQUIRED METHOD
+	@Override
+	public List<String> listFacilityProblems() {
+		List<String> problems = new Vector<String> ();
+		
+		for (int i = 0; i < maintRequests.size(); i++) {
+			String temp = maintRequests.get(i).getDesc();
+			System.out.println(temp);
+			problems.add(temp);
+		}
+		return problems;
+	}
+	
+	//end IMaintenance methods
+	
+	
+	//begin IFacilityUse methods
+
+	//REQUIRED METHOD
+	@Override
+	public boolean isInUseDuringInterval() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean assignFacilityToUse() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean vacateFacility() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public List<Inspection> listInspections() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<String> listActualUsage() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public double calcUsageRate() {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 
 }

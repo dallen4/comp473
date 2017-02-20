@@ -1,0 +1,23 @@
+package model.maintenance;
+
+import java.util.Calendar;
+
+public class Request {
+	
+	private int id;
+	private String description;
+	private boolean completed;
+	private Calendar dateCreated;
+
+	public Request(int id, String description) {
+		this.id = id;
+		this.description = description;
+		completed = false;
+		dateCreated = Calendar.getInstance();
+	}
+	
+	public int getID() {
+		return id;
+	}
+
+}

@@ -10,7 +10,7 @@ public interface IMaintenance {
 	public double calcMaintenanceCostForFacility();
 	public double calcProblemRateForFacility();
 	public double calcDownTimeForFacility();
-	public List<String> listMaintRequests();
+	public List<Request> listMaintRequests();
 	public List<String> listMaintenance();
 	public List<String> listFacilityProblems();
 	

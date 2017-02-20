@@ -1,0 +1,33 @@
+package model.maintenance;
+
+import java.util.Calendar;
+
+public class Request {
+	
+	private int id;
+	private String description;
+	private boolean completed;
+	private Calendar dateCreated;
+
+	public Request(int id, String description) {
+		this.id = id;
+		this.description = description;
+		completed = false;
+		dateCreated = Calendar.getInstance();
+	}
+	
+	// DEFAULT CONSTRUCTOR
+	public Request() {
+		this.id = 0000;
+		this.description = "No description provided for this request.";
+		completed = false;
+		dateCreated = Calendar.getInstance();
+	}
+	
+	// GETTERS & SETTERS
+	
+	public int getID() {
+		return id;
+	}
+
+}

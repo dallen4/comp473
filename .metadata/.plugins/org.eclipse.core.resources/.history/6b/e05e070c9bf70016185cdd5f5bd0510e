@@ -1,0 +1,11 @@
+package model.maintenance;
+
+import java.util.Date;
+
+public class Schedule {
+
+	public Schedule() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

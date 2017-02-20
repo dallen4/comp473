@@ -1,0 +1,19 @@
+package model.maintenance;
+
+import java.util.Calendar;
+
+public class Request {
+	
+	private String ID;
+	private String description;
+	private boolean completed;
+
+	public Request() {
+		// TODO Auto-generated constructor stub
+	}
+	
+	public String getID() {
+		return ID;
+	}
+
+}

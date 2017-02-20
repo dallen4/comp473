@@ -1,0 +1,77 @@
+package view;
+
+import model.facility.Facilities;
+import model.facility.Facility;
+import model.maintenance.Maintenance;
+
+public class Main {
+
+	public static void main(String[] args) {
+		System.out.println("Starting Facility Management System... \n");
+
+		// Creating our facilities 'Loyola'
+		Facilities Loyola = new Facilities();
+
+		// Creating our first facilities 'Damen'
+		System.out.println("Creating facilities... \n");
+		Facility Damen = new Facility(1, "Damen", 100);
+		Facility Corboy = new Facility(2, "Corboy", 800);
+		
+		
+		
+		//BEGIN TESTS OF FACILITY INTERFACE REQUIREMENTS
+		System.out.println("Beginning tests for Facility interface functionality...");
+
+		// Adding Damen to the Loyola facilities list
+		System.out.println("Adding facilities to Facilities List...");
+		if (Loyola.addNewFacility(Damen)) {
+			System.out.println("Damen facility added successfully.");
+		}
+		
+		if (Loyola.addNewFacility(Corboy)) {
+			System.out.println("Corboy facility added successfully. \n");
+		}
+
+		// Testing listFacilities() method
+		System.out.println("Listing Facility names...");
+		Loyola.listFacilities();
+		System.out.println("");
+		
+		// Testing getFacilityInformation method
+		System.out.println("Retrieving Facility Information...");
+		Damen.getFacilityInformation();
+		System.out.println("");
+		Corboy.getFacilityInformation();
+		System.out.println("");
+
+		// Creating a Maintenance object for Damen
+		Maintenance DamenMaint = new Maintenance(1, "Damen");
+		// Adding a facility request and printing it
+		System.out.println("Creating Facility Maintenance Request...");
+		DamenMaint.makeFacilityMaintRequest("Broken Sink");
+		System.out.println("");
+		
+		System.out.println("Listing Facility Problems for Facility " + Damen.getID() + ":");
+		DamenMaint.listFacilityProblems();
+		
+		
+		//END TESTS OF FACILITY INTERFACE REQUIREMENTS
+		
+		
+		//BEGIN TESTS OF MAINTENANCE INTERFACE REQUIREMENTS
+		System.out.println("Beginning tests for Facility Maintenance interface functionality...");
+		
+		
+		
+		//END TESTS OF MAINTENANCE INTERFACE REQUIREMENTS
+		
+		
+		//BEGIN TESTS OF USE INTERFACE REQUIREMENTS
+		System.out.println("Beginning tests for Facility Use interface functionality...");
+		
+		
+		
+		//END TESTS OF USE INTERFACE REQUIREMENTS
+	}
+
+}

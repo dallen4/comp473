@@ -1,0 +1,12 @@
+package model.maintenance;
+
+public abstract class AMaintenance {
+	
+	private int id;
+	private String description;
+	
+	public AMaintenance() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

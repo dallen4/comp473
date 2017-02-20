@@ -1,0 +1,11 @@
+package model.maintenance;
+
+import java.util.Calendar;
+
+public class Schedule {
+
+	public Schedule(LocalDateTime currTime) {
+		// TODO Auto-generated constructor stub
+	}
+
+}

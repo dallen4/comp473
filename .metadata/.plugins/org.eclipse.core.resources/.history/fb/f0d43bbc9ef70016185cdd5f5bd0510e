@@ -1,0 +1,93 @@
+package model.maintenance;
+
+import java.util.Calendar;
+
+public class Request {
+	
+	private int id;
+	private String description;
+	private boolean completed;
+	private Calendar dateCreated;
+
+	public Request(int id, String description) {
+		this.id = id;
+		this.description = description;
+		completed = false;
+		dateCreated = Calendar.getInstance();
+	}
+	
+	// DEFAULT CONSTRUCTOR
+	public Request() {
+		this.id = 0000;
+		this.description = "No description provided for this request.";
+		completed = false;
+		dateCreated = Calendar.getInstance();
+	}
+	
+	// GETTERS & SETTERS
+	
+	public int getID() {
+		return id;
+	}
+	
+	public boolean setID (int newID) {
+		int temp = getID();
+		this.id = newID;
+		
+		if (id == newID) {
+			System.out.println("ID for Request previously known as " + temp + " has been updated to ID number " + getID() + " successfully...");
+			return true;
+		} else {
+			System.out.println("ID modification for Request " + getID() + " was NOT successful...");
+			return false;
+		}
+	}
+
+	public String getDesc () {
+		return description;
+	}
+	
+	public boolean setDesc (String newDesc) {
+		this.description = newDesc;
+		
+		if (description == newDesc) {
+			System.out.println("Description for Request " + getID() + " updated successfully...");
+			return true;
+		} else {
+			System.out.println("Description for Request " + getID() + " was NOT updated successfully...");
+			return false;
+		}
+	}
+	
+	public boolean getState () {
+		return completed;
+	}
+	
+	public boolean setState (boolean newState) {
+		this.completed = newState;
+		
+		if (completed == newState) {
+			System.out.println("Completion status for Request " + getID() + " updated successfully...");
+			return true;
+		} else {
+			System.out.println("Completion for Request " + getID() + " was NOT updated successfully...");
+			return false;
+		}
+	}
+	
+	public Calendar getDateCreated () {
+		return dateCreated;
+	}
+	
+	public boolean setDateCreated (Calendar newDate) {
+		this.dateCreated = newDate;
+		
+		if (dateCreated == newDate) {
+			System.out.println("Creation date for Request " + getID() + " updated successfully...");
+			return true;
+		} else {
+			System.out.println("Creation date for Request " + getID() + " was NOT updated successfully...");
+			return false;
+		}
+	}
+}
