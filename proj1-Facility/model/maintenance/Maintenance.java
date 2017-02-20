@@ -7,13 +7,18 @@ public class Maintenance {
 	
 	private List<Request> Requests = new Vector<Request>();
 	private List<String> Problems = new Vector<String>();
+	private Integer facilityID;
+	private String facilityName;
+	private String problemDetails;
 
 	
-	public Maintenance() {
-//		CONSTRUCTOR
+	public Maintenance(int facilityID, String facilityName) {
+		this.facilityID = facilityID;
+		this.facilityName = facilityName;
 	}
 	
-	public Request makeFacilityMaintRequest() {
+	public Request makeFacilityMaintRequest(String problemDetails) {
+		Problems.add(problemDetails);
 		return new Request();
 	}
 	

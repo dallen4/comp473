@@ -2,6 +2,7 @@ package view;
 
 import model.facility.Facilities;
 import model.facility.Facility;
+import model.maintenance.Maintenance;
 
 public class Main {
 
@@ -23,6 +24,12 @@ public class Main {
 		Loyola.listFacilities();
 		Damen.getFacilityInformation();
 		Corboy.getFacilityInformation();
+
+		// Creating a Maintenance object for Damen
+		Maintenance DamenMaint = new Maintenance(1, "Damen");
+		// Adding a facility request and printing it
+		DamenMaint.makeFacilityMaintRequest("Broken Sink");
+		DamenMaint.listFacilityProblems();
 
 
 	}

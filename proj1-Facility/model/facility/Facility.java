@@ -85,11 +85,4 @@ public class Facility implements IFacility {
 		return;
 	}
 
-	//REQUIRED METHOD
-	@Override
-	public void addFacilityDetail() {
-		// TODO Auto-generated method stub
-		
-	}
-
 }
