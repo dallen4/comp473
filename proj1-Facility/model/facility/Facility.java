@@ -9,7 +9,9 @@ import java.util.Date;
 import java.text.DateFormat;
 
 import model.maintenance.*;
+import model.use.Event;
 import model.use.IFacilityUse;
+import model.use.Event;
 
 public class Facility implements IFacility, IMaintenance, IFacilityUse {
 	
@@ -21,6 +23,7 @@ public class Facility implements IFacility, IMaintenance, IFacilityUse {
 	private List<String> Details = new Vector<String>();
 	private List<Inspection> Inspections = new Vector<Inspection>();
 	private List<Request> maintRequests = new Vector<Request>();
+	private List<Event> eventList = new Vector<Event>();
 	
 	//CONSTRUCTORS
 	public Facility(int id, String name) {
@@ -251,6 +254,14 @@ public class Facility implements IFacility, IMaintenance, IFacilityUse {
 		// TODO Auto-generated method stub
 		return false;
 	}
+
+	public Event addNewEvent(Date eventDate, String eventName, Integer eventID){
+		Event newEvent = new Event(eventDate,eventName,eventID);
+		eventList.add(newEvent);
+		System.out.println("Event with ID " + newEvent.getEventID() + " has been submitted successfully...");
+		return newEvent;
+	}
+
 
 	@Override
 	public boolean assignFacilityToUse() {
