@@ -120,9 +120,7 @@ public class Main {
 		
 		
 		//test listInspections()
-		for (int i = 0; i < Loyola.getFacilities().size(); i++) {
-			Loyola.getFacilities().get(i).listInspections();
-		}
+		
 		
 		
 		//test listActualUsage()

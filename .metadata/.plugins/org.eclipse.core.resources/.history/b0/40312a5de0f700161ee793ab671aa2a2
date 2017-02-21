@@ -11,10 +11,6 @@ public class Facilities {
 		// TODO Auto-generated constructor stub
 	}
 	
-	public List<Facility> getFacilities () {
-		return Facilities;
-	}
-	
 	//REQUIRED METHOD
 	public boolean addNewFacility(Facility newFacility) {
 		return Facilities.add(newFacility);
