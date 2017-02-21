@@ -78,7 +78,7 @@ public class Main {
 		//
 
 		// Schedule a maintenance request
-		Damen.scheduleMaintenance(1, "201705");
+		Damen.scheduleMaintenance(1, "201705031830");
 		System.out.println(Damen.listMaintRequests());
 		
 		//END TESTS OF MAINTENANCE INTERFACE REQUIREMENTS

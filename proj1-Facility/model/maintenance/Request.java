@@ -12,7 +12,7 @@ public class Request {
 	private boolean completed;
 	private boolean scheduled;
 	private Calendar dateCreated;
-	private Calendar dateScheduled;
+	private Calendar dateScheduled = null;
 
 	//NEED TO IMPLEMENT COST CALCULATION
 
@@ -118,7 +118,14 @@ public class Request {
 	}
 	
 	public String getDateScheduled () {
-		return dateScheduled.toString();
+		if (dateScheduled != null){
+			Calendar cal = dateScheduled;
+			Date date = cal.getTime();
+			return date.toString();
+		}
+		else {
+			return "Not Scheduled";
+		}
 	}
 	
 	public boolean setDateScheduled (Calendar scheduledDate) {

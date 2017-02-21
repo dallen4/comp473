@@ -132,7 +132,7 @@ public class Facility implements IFacility, IMaintenance, IFacilityUse {
 				String dateString = maintenanceDate;
 
 // format for year and month
-				SimpleDateFormat format = new SimpleDateFormat("yyyyMM");
+				SimpleDateFormat format = new SimpleDateFormat("yyyyMMddkkmm");
 // parse the date
 				Date date = null;
 				try {
@@ -143,8 +143,6 @@ public class Facility implements IFacility, IMaintenance, IFacilityUse {
 
 				Calendar cal = Calendar.getInstance();
 				cal.setTime(date);
-// make it the last day of that month
-				cal.set(Calendar.DATE, cal.getActualMaximum(Calendar.DATE));
 
 				System.out.println(cal.getTime());
 				maintRequests.get(i).setDateScheduled(cal);
