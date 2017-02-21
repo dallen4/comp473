@@ -80,6 +80,13 @@ public class Main {
 		// Schedule a maintenance request
 		Damen.scheduleMaintenance(1, "201705031830");
 		System.out.println(Damen.listMaintRequests());
+
+		// Adding the cost of maintenance
+		Damen.addNewCost(1,100);
+		System.out.println(Damen.listMaintRequests());
+
+		// Find total Cost
+		System.out.println(Damen.calcMaintenanceCostForFacility());
 		
 		//END TESTS OF MAINTENANCE INTERFACE REQUIREMENTS
 		

@@ -13,6 +13,7 @@ public class Request {
 	private boolean scheduled;
 	private Calendar dateCreated;
 	private Calendar dateScheduled = null;
+	private double cost = 20.0;
 
 	//NEED TO IMPLEMENT COST CALCULATION
 
@@ -22,7 +23,6 @@ public class Request {
 		scheduled = false;
 		completed = false;
 		dateCreated = Calendar.getInstance();
-		dateScheduled = Calendar.getInstance();
 	}
 	
 	// DEFAULT CONSTRUCTOR
@@ -31,7 +31,6 @@ public class Request {
 		this.description = "N/A";
 		scheduled = false;
 		completed = false;
-		dateCreated = Calendar.getInstance();
 	}
 	
 	// GETTERS & SETTERS
@@ -138,5 +137,21 @@ public class Request {
 			System.out.println("Scheduled date for Request " + getID() + " was NOT updated successfully...");
 			return false;
 		}
+	}
+	// Sets the vector of all the costs
+	public boolean setCost(int id, double cost) {
+		this.cost = cost;
+
+		if (cost == cost) {
+			System.out.println("Completion status for Cost Update " + getID() + " updated successfully...");
+			return true;
+		} else {
+			System.out.println("Completion for Cost Update " + getID() + " was NOT updated successfully...");
+			return false;
+		}
+	}
+
+	public double getCost(){
+		return cost;
 	}
 }

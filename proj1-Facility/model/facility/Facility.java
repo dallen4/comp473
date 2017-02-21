@@ -156,8 +156,12 @@ public class Facility implements IFacility, IMaintenance, IFacilityUse {
 	//REQUIRED METHOD
 	@Override
 	public double calcMaintenanceCostForFacility() {
-		// TODO Auto-generated method stub
-		return 0;
+		double totalCost = 0;
+		for(int i=0;i<maintRequests.size();i++){
+			double cost = maintRequests.get(i).getCost();
+			totalCost = totalCost + cost;
+		}
+		return totalCost;
 	}
 
 	//REQUIRED METHOD
@@ -202,10 +206,8 @@ public class Facility implements IFacility, IMaintenance, IFacilityUse {
 			System.out.println("ID: " + temp.getID());
 			System.out.println("Description: " + temp.getDesc());
 			System.out.println("Complete: " + temp.getCompleted());
-			
-			//need conversion to date format
-			
 			System.out.println("Scheduled for: " + temp.getDateScheduled());
+			System.out.println("The maintenance cost is: " + temp.getCost() + "$");
 		}
 		return maintRequests;
 	}
@@ -282,6 +284,16 @@ public class Facility implements IFacility, IMaintenance, IFacilityUse {
 			System.out.println("ID not found");
 			return false;
 		}
+
+	public boolean addNewCost(int maintID, int cost){
+		for (int i = 0; i<maintRequests.size(); i++){
+			if (maintID == maintRequests.get(i).getID()){
+				maintRequests.get(i).setCost(maintID, cost);}
+			return true;
+		}
+		System.out.println("ID not found");
+		return false;
+	}
 
 
 }
