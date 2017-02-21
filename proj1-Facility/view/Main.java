@@ -122,7 +122,11 @@ public class Main {
 		
 		//BEGIN TESTS OF USE INTERFACE REQUIREMENTS
 		System.out.println("Beginning tests for Facility Use interface functionality...");
-		
+
+		// test add new event
+
+		Damen.addNewEvent("20170509","Big Party",1);
+		Damen.listEvents();
 		//test isInUseDuringInterval()
 		
 		

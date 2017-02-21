@@ -100,6 +100,7 @@ public class Facility implements IFacility, IMaintenance, IFacilityUse {
 		System.out.println(info);
 		return info;
 	}
+
 	
 	//REQUIRED METHOD
 	public int requestAvailableCapacity () {
@@ -255,11 +256,21 @@ public class Facility implements IFacility, IMaintenance, IFacilityUse {
 		return false;
 	}
 
-	public Event addNewEvent(Date eventDate, String eventName, Integer eventID){
+	public Event addNewEvent(String eventDate, String eventName, Integer eventID){
 		Event newEvent = new Event(eventDate,eventName,eventID);
 		eventList.add(newEvent);
 		System.out.println("Event with ID " + newEvent.getEventID() + " has been submitted successfully...");
 		return newEvent;
+	}
+
+	public List<Event> listEvents() {
+		System.out.println("Printing all Events for Facility " + getID());
+
+		for (int i = 0; i < eventList.size(); i++) {
+			System.out.println(eventList.get(i).getEventInfo());
+		}
+
+		return eventList;
 	}
 
 
