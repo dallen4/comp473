@@ -110,7 +110,7 @@ public class Main {
 		}
 		
 		//TEST calcDownTimeForFacility()
-		System.out.println("Downtime for facility is: " + Damen.calcDownTimeForFacility() + "hrs\n");
+		System.out.println("Downtime for facility is: " + Damen.calcDownTimeForFacility() + "hrs");
 		
 		//TEST listMaintenance()
 		System.out.println("Listing all completed Maintenance by Facility...");
@@ -118,7 +118,6 @@ public class Main {
 			Facility temp = Loyola.getFacilities().get(i);
 			System.out.println("Facility " + temp.getID() + ":");
 			temp.listMaintenance();
-			System.out.println("");
 		}
 		
 		
@@ -133,14 +132,10 @@ public class Main {
 		
 		
 		//test assignFacilityToUse()
-		System.out.println("Assigning Facility to use....");
 		Damen.assignFacilityToUse("20170509","Big Party",1);
-		System.out.println("");
 
 		//test isInUseDuringInterval()
-		System.out.println("Testing availability...");
 		Damen.isInUseDuringInterval("20170509");
-		System.out.println("");
 
 		//test vacateFacility()
 		System.out.println("Vacating all available facilities...");
@@ -148,7 +143,6 @@ public class Main {
 			Facility temp = Loyola.getFacilities().get(i);
 			System.out.println("Vacated Facility " + temp.getID());
 			System.out.println("Current capacity: " + temp.getCurrCapacity());
-			System.out.println("");
 		}
 		
 		//test listInspections()
@@ -156,33 +150,26 @@ public class Main {
 		for (int i = 0; i < Loyola.getFacilities().size(); i++) {
 			System.out.println("Facility " + Loyola.getFacilities().get(i).getID());
 			Loyola.getFacilities().get(i).listInspections();
-			System.out.println("");
 		}
 		
 		
 		//test listActualUsage()
-		System.out.println("Listing actual usage of facility...");
 		Damen.listActualUsage();
-		System.out.println("");
 		
 		
 		//test calcUsageRate()
-		System.out.println("Calculating actual usage of facility by year...");
 		System.out.println("The usage rate for this facility is: " + Damen.calcUsageRate());
 
 		//test completeMaintRequest()
 		// Complete a maintenance request
-		System.out.println("Completing Maintenance Requests of Damen Facility...");
 		Damen.completeMaintRequest(1);
 		System.out.println(Damen.listMaintRequests());
-		System.out.println("");
 		
 		//test addNewCost()
 		
 		
 		
 		//END TESTS OF USE INTERFACE REQUIREMENTS
-		System.out.println("ending program....");
 	}
 
 }

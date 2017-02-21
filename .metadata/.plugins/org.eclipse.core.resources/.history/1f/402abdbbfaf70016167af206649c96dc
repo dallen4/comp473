@@ -182,7 +182,6 @@ public class Main {
 		
 		
 		//END TESTS OF USE INTERFACE REQUIREMENTS
-		System.out.println("ending program....");
 	}
 
 }

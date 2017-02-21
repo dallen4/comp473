@@ -172,17 +172,15 @@ public class Main {
 
 		//test completeMaintRequest()
 		// Complete a maintenance request
-		System.out.println("Completing Maintenance Requests of Damen Facility...");
+		System.out.println("Completing Maintenance Requests of Damen Facility..."
 		Damen.completeMaintRequest(1);
 		System.out.println(Damen.listMaintRequests());
-		System.out.println("");
 		
 		//test addNewCost()
 		
 		
 		
 		//END TESTS OF USE INTERFACE REQUIREMENTS
-		System.out.println("ending program....");
 	}
 
 }

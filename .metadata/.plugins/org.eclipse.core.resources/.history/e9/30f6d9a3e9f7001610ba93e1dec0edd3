@@ -1,0 +1,327 @@
+package model.facility;
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.List;
+import java.util.Vector;
+import java.util.Calendar;
+import java.util.Date;
+import java.text.DateFormat;
+
+import model.maintenance.*;
+import model.use.Event;
+import model.use.IFacilityUse;
+import model.use.Event;
+
+public class Facility implements IFacility, IMaintenance, IFacilityUse {
+	
+	private int id;
+	private String name;
+	private int currCapacity = 0;
+	private int potentialCapacity;
+	private List<String> Details = new Vector<String>();
+	private List<Inspection> Inspections = new Vector<Inspection>();
+	private List<Request> maintRequests = new Vector<Request>();
+	private List<Event> eventList = new Vector<Event>();
+	
+	//CONSTRUCTORS
+	public Facility(int id, String name) {
+		this.id = id;
+		this.name = name;
+	}
+	
+	public Facility(int id, String name, int potentialCapacity) {
+		this.id = id;
+		this.name = name;
+		this.potentialCapacity = potentialCapacity;
+	}
+	
+	public Facility(int id, String name, int potentialCapacity, List<String> Details) {
+		this.id = id;
+		this.name = name;
+		this.potentialCapacity = potentialCapacity;
+		this.Details = Details;
+	}
+	
+	//DEFAULT CONSTRUCTOR
+	public Facility() {
+		// TODO Auto-generated constructor stub
+	}
+	
+	
+	//GETTERS & SETTERS
+	
+	public int getID() {
+		return id;
+	}
+	
+	public boolean setID (int id) {
+		this.id = id;
+		
+		if (this.id == id) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+	
+	public String getName() {
+		return name;
+	}
+	
+	public boolean setName(String newName) {
+		this.name = newName;
+		
+		if (this.name == newName) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+	
+	public Integer getCurrCapacity() {
+		return currCapacity;
+	}
+	
+	public boolean setCurrCapacity(Integer newCap) {
+		this.currCapacity = newCap;
+		
+		if (this.currCapacity == newCap) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+	
+	//REQUIRED METHOD
+	public String getFacilityInformation() {
+		String info = "ID: " + id + "\nName: " + name  + "\nCapacity: " + potentialCapacity + "\nAvailable Capacity: " + requestAvailableCapacity() + "\nDetails: " + Details;
+		System.out.println(info);
+		return info;
+	}
+
+	
+	//REQUIRED METHOD
+	public int requestAvailableCapacity () {
+		return potentialCapacity - currCapacity;
+	}
+	
+	//REQUIRED METHOD
+	public void addFacilityDetail(String newDetail) {
+		Details.add(newDetail);
+		System.out.println("A new facility detail has been submitted successfully...");
+		return;
+	}
+	
+	//end IFacility methods
+	
+	
+	//begin IMaintenance methods
+
+	//REQUIRED METHOD
+	@Override
+	public Request makeFacilityMaintRequest(int reqID, String reqDesc) {
+		Request newRequest = new Request (reqID, reqDesc);
+		maintRequests.add(newRequest);
+		System.out.println("Request with ID " + newRequest.getID() + " has been submitted successfully...");
+		return newRequest;
+	}
+
+	//REQUIRED METHOD
+	@Override
+	public Calendar scheduleMaintenance(int maintID, String maintenanceDate) {
+		for (int i = 0; i < maintRequests.size(); i++) {
+			if (maintID == maintRequests.get(i).getID()) {
+				String dateString = maintenanceDate;
+
+// format for year and month
+				SimpleDateFormat format = new SimpleDateFormat("yyyyMMddkkmm");
+// parse the date
+				Date date = null;
+				try {
+					date = format.parse(dateString);
+				} catch (ParseException e) {
+					e.printStackTrace();
+				}
+
+				Calendar cal = Calendar.getInstance();
+				cal.setTime(date);
+
+				System.out.println(cal.getTime());
+				maintRequests.get(i).setDateScheduled(cal);
+				return cal;
+			}
+		}
+		System.out.println("ID not found");
+		return null;
+	}
+
+	//REQUIRED METHOD
+	@Override
+	public double calcMaintenanceCostForFacility() {
+		double totalCost = 0;
+		for(int i=0;i<maintRequests.size();i++){
+			double cost = maintRequests.get(i).getCost();
+			totalCost = totalCost + cost;
+		}
+		return totalCost;
+	}
+
+	//REQUIRED METHOD
+	//Calculates ratio of problems/requests completed versus 
+	@Override
+	public double calcProblemRateForFacility() {
+		double complete = 0;
+		double incomplete = 0;
+		double scheduled = 0;
+		double ratio;
+		
+		for (int i = 0; i < maintRequests.size(); i++) {
+			if (maintRequests.get(i).getCompleted()) {
+				complete++;
+			} else {				
+				incomplete++;
+				if (maintRequests.get(i).getScheduled()) {
+					scheduled++;
+				}
+			}
+		}
+		
+		ratio = complete/maintRequests.size();
+		
+		System.out.println("Problem Rate (ratio of completed to problems/requests submitted: " + ratio + "\nOf " + incomplete + " incompleted requests, " + scheduled + " have been scheduled.");
+		return ratio;
+	}
+
+	//REQUIRED METHOD
+	@Override
+	public double calcDownTimeForFacility() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	//REQUIRED METHOD
+	@Override
+	public List<Request> listMaintRequests() {
+
+		for (int i = 0; i < maintRequests.size(); i++) {
+			Request temp = maintRequests.get(i);
+			System.out.println("ID: " + temp.getID());
+			System.out.println("Description: " + temp.getDesc());
+			System.out.println("Complete: " + temp.getCompleted());
+			System.out.println("Scheduled for: " + temp.getDateScheduled());
+			System.out.println("The maintenance cost is: " + temp.getCost() + "$");
+		}
+		return maintRequests;
+	}
+
+	//REQUIRED METHOD
+	//lists COMPLETED maintenance
+	@Override
+	public List<String> listMaintenance() {
+		System.out.println("Listing all completed maintenance for Facility " + this.name + "...");
+		
+		for (int i = 0; i < maintRequests.size(); i++) {
+			if (maintRequests.get(i).getCompleted()) {
+				System.out.println("ID: " + maintRequests.get(i).getID());
+				System.out.println("Description: " + maintRequests.get(i).getDesc());
+			}
+		}
+		return null;
+	}
+
+	//REQUIRED METHOD
+	@Override
+	public List<String> listFacilityProblems() {
+		List<String> problems = new Vector<String> ();
+		
+		for (int i = 0; i < maintRequests.size(); i++) {
+			String temp = maintRequests.get(i).getDesc();
+			System.out.println(temp);
+			problems.add(temp);
+		}
+		return problems;
+	}
+	
+	//end IMaintenance methods
+	
+	
+	//begin IFacilityUse methods
+
+	//REQUIRED METHOD
+	@Override
+	public boolean isInUseDuringInterval() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	public List<Event> listEvents() {
+		System.out.println("Printing all Events for Facility " + getID());
+
+		for (int i = 0; i < eventList.size(); i++) {
+			System.out.println(eventList.get(i).getEventInfo());
+		}
+
+		return eventList;
+	}
+
+
+	@Override
+	public boolean assignFacilityToUse(String eventDate, String eventName, Integer eventID) {
+		Event newEvent = new Event(eventDate,eventName,eventID);
+		eventList.add(newEvent);
+		System.out.println("Event with ID " + newEvent.getEventID() + " has been submitted successfully...");
+		return true;
+	}
+
+	@Override
+	public boolean vacateFacility() {
+		return setCurrCapacity(0);
+	}
+
+	@Override
+	public List<Inspection> listInspections() {
+		System.out.println("Printing all Inspections for Facility " + getID());
+		
+		for (int i = 0; i < Inspections.size(); i++) {
+			System.out.println(Inspections.get(i).getInfo());
+		}
+		
+		return Inspections;
+	}
+
+	@Override
+	public List<String> listActualUsage() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public double calcUsageRate() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	public boolean completeMaintRequest(int maintID){
+		for (int i = 0; i<maintRequests.size(); i++){
+			if (maintID == maintRequests.get(i).getID()){
+				maintRequests.get(i).setCompleted(maintID,true);}
+				return true;
+			}
+			System.out.println("ID not found");
+			return false;
+		}
+
+	public boolean addNewCost(int maintID, int cost){
+		for (int i = 0; i<maintRequests.size(); i++){
+			if (maintID == maintRequests.get(i).getID()){
+				maintRequests.get(i).setCost(maintID, cost);}
+			return true;
+		}
+		System.out.println("ID not found");
+		return false;
+	}
+
+
+}
+

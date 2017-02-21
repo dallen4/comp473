@@ -1,9 +1,0 @@
-package facility;
-
-public class Facility {
-
-	public Facility() {
-		// TODO Auto-generated constructor stub
-	}
-
-}
