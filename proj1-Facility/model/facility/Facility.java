@@ -255,13 +255,6 @@ public class Facility implements IFacility, IMaintenance, IFacilityUse {
 		return false;
 	}
 
-	public Event addNewEvent(String eventDate, String eventName, Integer eventID){
-		Event newEvent = new Event(eventDate,eventName,eventID);
-		eventList.add(newEvent);
-		System.out.println("Event with ID " + newEvent.getEventID() + " has been submitted successfully...");
-		return newEvent;
-	}
-
 	public List<Event> listEvents() {
 		System.out.println("Printing all Events for Facility " + getID());
 
@@ -274,9 +267,11 @@ public class Facility implements IFacility, IMaintenance, IFacilityUse {
 
 
 	@Override
-	public boolean assignFacilityToUse() {
-		// TODO Auto-generated method stub
-		return false;
+	public boolean assignFacilityToUse(String eventDate, String eventName, Integer eventID) {
+		Event newEvent = new Event(eventDate,eventName,eventID);
+		eventList.add(newEvent);
+		System.out.println("Event with ID " + newEvent.getEventID() + " has been submitted successfully...");
+		return true;
 	}
 
 	@Override

@@ -125,7 +125,7 @@ public class Main {
 
 		// test add new event
 
-		Damen.addNewEvent("20170509","Big Party",1);
+		Damen.assignFacilityToUse("20170509","Big Party",1);
 		Damen.listEvents();
 		//test isInUseDuringInterval()
 		
