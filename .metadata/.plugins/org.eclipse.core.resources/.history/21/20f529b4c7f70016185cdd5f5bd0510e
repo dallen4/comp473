@@ -12,7 +12,7 @@ public class Request {
 	private boolean completed;
 	private boolean scheduled;
 	private Calendar dateCreated;
-	private Calendar dateScheduled;
+	private Calendar dateScheduled = null;
 
 	//NEED TO IMPLEMENT COST CALCULATION
 
@@ -22,7 +22,6 @@ public class Request {
 		scheduled = false;
 		completed = false;
 		dateCreated = Calendar.getInstance();
-		dateScheduled = Calendar.getInstance();
 	}
 	
 	// DEFAULT CONSTRUCTOR

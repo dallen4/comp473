@@ -204,9 +204,6 @@ public class Facility implements IFacility, IMaintenance, IFacilityUse {
 			System.out.println("ID: " + temp.getID());
 			System.out.println("Description: " + temp.getDesc());
 			System.out.println("Complete: " + temp.getCompleted());
-			
-			//need conversion to date format
-			
 			System.out.println("Scheduled for: " + temp.getDateScheduled());
 		}
 		return maintRequests;

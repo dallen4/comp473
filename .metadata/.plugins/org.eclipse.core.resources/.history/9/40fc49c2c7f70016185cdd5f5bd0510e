@@ -22,7 +22,6 @@ public class Request {
 		scheduled = false;
 		completed = false;
 		dateCreated = Calendar.getInstance();
-		dateScheduled = Calendar.getInstance();
 	}
 	
 	// DEFAULT CONSTRUCTOR
