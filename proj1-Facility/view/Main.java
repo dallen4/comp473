@@ -90,6 +90,9 @@ public class Main {
 		Damen.addNewCost(1,100);
 		System.out.println(Damen.listMaintRequests());
 
+		// Adding estimated work time:
+		Damen.addWorktime(1,1.5);
+
 		// Find total Cost
 		System.out.println(Damen.calcMaintenanceCostForFacility());
 		
@@ -103,7 +106,7 @@ public class Main {
 		}
 		
 		//TEST calcDownTimeForFacility()
-		
+		System.out.println("Downtime for facility is: " + Damen.calcDownTimeForFacility() + "hrs");
 		
 		//TEST listMaintenance()
 		System.out.println("Listing all completed Maintenance by Facility...");
@@ -122,19 +125,14 @@ public class Main {
 		
 		//BEGIN TESTS OF USE INTERFACE REQUIREMENTS
 		System.out.println("Beginning tests for Facility Use interface functionality...");
-
-		// test add new event
-
-		Damen.assignFacilityToUse("20170509","Big Party",1);
-		Damen.listEvents();
-		//test isInUseDuringInterval()
-		
 		
 		
 		//test assignFacilityToUse()
-		
-		
-		
+		Damen.assignFacilityToUse("20170509","Big Party",1);
+
+		//test isInUseDuringInterval()
+		Damen.isInUseDuringInterval("20170509");
+
 		//test vacateFacility()
 		System.out.println("Vacating all available facilities...");
 		for (int i = 0; i < Loyola.getFacilities().size(); i++) {
@@ -152,13 +150,12 @@ public class Main {
 		
 		
 		//test listActualUsage()
-		
+		Damen.listActualUsage();
 		
 		
 		//test calcUsageRate()
-		
-		
-		
+		System.out.println("The usage rate for this facility is: " + Damen.calcUsageRate());
+
 		//test completeMaintRequest()
 		// Complete a maintenance request
 		Damen.completeMaintRequest(1);

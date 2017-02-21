@@ -32,4 +32,8 @@ public class Event {
     public String getEventInfo() {
         return "Event ID: " + eventID + "\nEvent Date: " + eventDate + "\nEvent Name: " + eventName;
     }
+
+    public Date getEventDate() {
+        return eventDate;
+    }
 }

@@ -196,8 +196,11 @@ public class Facility implements IFacility, IMaintenance, IFacilityUse {
 	//REQUIRED METHOD
 	@Override
 	public double calcDownTimeForFacility() {
-		// TODO Auto-generated method stub
-		return 0;
+        double downtime = 0.0;
+	    for(int i=0; i<maintRequests.size(); i++){
+		    downtime = downtime + maintRequests.get(i).getEstimatedWorktime();
+        }
+		return downtime;
 	}
 
 	//REQUIRED METHOD
@@ -211,6 +214,7 @@ public class Facility implements IFacility, IMaintenance, IFacilityUse {
 			System.out.println("Complete: " + temp.getCompleted());
 			System.out.println("Scheduled for: " + temp.getDateScheduled());
 			System.out.println("The maintenance cost is: " + temp.getCost() + "$");
+			System.out.println("The estimated worktime is: " + temp.getEstimatedWorktime() + "hrs");
 		}
 		return maintRequests;
 	}
@@ -250,19 +254,22 @@ public class Facility implements IFacility, IMaintenance, IFacilityUse {
 
 	//REQUIRED METHOD
 	@Override
-	public boolean isInUseDuringInterval() {
-		// TODO Auto-generated method stub
+	public boolean isInUseDuringInterval(String eventDate) {
+        SimpleDateFormat format = new SimpleDateFormat("yyyyMMdd");
+        Date date = null;
+        try {
+            date = format.parse(eventDate);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        for (int i=0; i<eventList.size(); i++){
+            if (date.compareTo(eventList.get(i).getEventDate()) == 0){
+                System.out.println("This date is already booked.");
+                return true;
+            }
+        }
+        System.out.println("This date is available for booking");
 		return false;
-	}
-
-	public List<Event> listEvents() {
-		System.out.println("Printing all Events for Facility " + getID());
-
-		for (int i = 0; i < eventList.size(); i++) {
-			System.out.println(eventList.get(i).getEventInfo());
-		}
-
-		return eventList;
 	}
 
 
@@ -291,15 +298,20 @@ public class Facility implements IFacility, IMaintenance, IFacilityUse {
 	}
 
 	@Override
-	public List<String> listActualUsage() {
-		// TODO Auto-generated method stub
-		return null;
+	public List<Event>  listActualUsage() {
+        System.out.println("Printing all Events for Facility " + getID());
+
+        for (int i = 0; i < eventList.size(); i++) {
+            System.out.println(eventList.get(i).getEventInfo());
+        }
+        return eventList;
 	}
 
 	@Override
 	public double calcUsageRate() {
-		// TODO Auto-generated method stub
-		return 0;
+		double use = eventList.size();
+	    double usageRate = use/365;
+	    return usageRate;
 	}
 
 	public boolean completeMaintRequest(int maintID){
@@ -321,6 +333,17 @@ public class Facility implements IFacility, IMaintenance, IFacilityUse {
 		System.out.println("ID not found");
 		return false;
 	}
+
+    public boolean addWorktime(int maintID, double workTime){
+        for (int i = 0; i<maintRequests.size(); i++){
+            if (maintID == maintRequests.get(i).getID()){
+                maintRequests.get(i).setEstimatedWorkedTime(maintID, workTime);}
+            return true;
+        }
+        System.out.println("ID not found");
+        return false;
+    }
+
 
 
 }

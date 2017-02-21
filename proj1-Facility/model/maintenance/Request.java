@@ -14,6 +14,7 @@ public class Request {
 	private Calendar dateCreated;
 	private Calendar dateScheduled = null;
 	private double cost = 20.0;
+	private double estimatedWorktime;
 
 	//NEED TO IMPLEMENT COST CALCULATION
 
@@ -115,6 +116,7 @@ public class Request {
 			return false;
 		}
 	}
+
 	
 	public String getDateScheduled () {
 		if (dateScheduled != null){
@@ -149,6 +151,21 @@ public class Request {
 			System.out.println("Completion for Cost Update " + getID() + " was NOT updated successfully...");
 			return false;
 		}
+	}
+
+	public boolean setEstimatedWorkedTime (int id, double estimatedWorktime) {
+		this.estimatedWorktime = estimatedWorktime;
+		if (estimatedWorktime == estimatedWorktime) {
+			System.out.println("Updated worktime for Request " + getID() + " updated successfully...");
+			return true;
+		} else {
+			System.out.println("Updated worktime for Request " + getID() + " was NOT updated successfully...");
+			return false;
+		}
+	}
+
+	public double getEstimatedWorktime(){
+		return estimatedWorktime;
 	}
 
 	public double getCost(){
