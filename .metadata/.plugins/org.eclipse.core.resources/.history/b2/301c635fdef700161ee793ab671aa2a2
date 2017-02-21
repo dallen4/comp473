@@ -265,13 +265,8 @@ public class Facility implements IFacility, IMaintenance, IFacilityUse {
 
 	@Override
 	public List<Inspection> listInspections() {
-		System.out.println("Printing all Inspections for Facility " + getID());
-		
-		for (int i = 0; i < Inspections.size(); i++) {
-			System.out.println(Inspections.get(i).getInfo());
-		}
-		
-		return Inspections;
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 	@Override

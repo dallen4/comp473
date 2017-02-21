@@ -1,0 +1,27 @@
+package model.facility;
+
+import java.util.Date;
+import java.util.Calendar;
+
+public class Inspection {
+	
+	private int id;
+	private Date dateConducted;
+	private String inspector;
+	private boolean completed = false;
+
+	public Inspection(int id, Date date, String insp, boolean com) {
+		this.id = id;
+		this.dateConducted = date;
+		this.inspector = insp;
+		this.completed = com;
+	}
+	
+	//DEFAULT CONSTRUCTOR
+	public Inspection() {
+		id = 0000;
+		dateConducted = null;
+		inspector = "John Doe";
+	}
+
+}

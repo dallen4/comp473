@@ -270,8 +270,6 @@ public class Facility implements IFacility, IMaintenance, IFacilityUse {
 		for (int i = 0; i < Inspections.size(); i++) {
 			System.out.println(Inspections.get(i).getInfo());
 		}
-		
-		return Inspections;
 	}
 
 	@Override

@@ -43,22 +43,6 @@ public class Inspection {
 		}
 	}
 	
-	public Date getDate () {
-		return dateConducted;
-	}
-	
-	public boolean setDate (Date newD) {
-		this.dateConducted = newD;
-		
-		if (this.dateConducted == newD) {
-			System.out.println("Date for inspection updated successfully successfully...");
-			return true;
-		} else {
-			System.out.println("Date setting for inspection was NOT successful...");
-			return false;
-		}
-	}
-	
 	public String getInspector () {
 		return inspector;
 	}
@@ -72,26 +56,6 @@ public class Inspection {
 			System.out.println("Inspector set for Request " + getID() + " was NOT successful...");
 			return false;
 		}
-	}
-	
-	public boolean getCompleted () {
-		return completed;
-	}
-	
-	public boolean setCompleted (boolean newState) {
-		this.completed = newState;
-		
-		if (completed == newState) {
-			System.out.println("Completion status for Inspection " + getID() + " updated successfully...");
-			return true;
-		} else {
-			System.out.println("Completion for Inspection " + getID() + " was NOT updated successfully...");
-			return false;
-		}
-	}
-	
-	public String getInfo () {
-		return "Inspection ID: " + getID() + "\nDate conducted: " + getDate() + "\nInspector: " + getInspector() + "\nCompleted: " + getCompleted();
 	}
 
 }

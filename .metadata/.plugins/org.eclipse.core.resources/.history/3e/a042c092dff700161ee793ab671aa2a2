@@ -65,11 +65,6 @@ public class Main {
 		System.out.println("Creating Facility Maintenance Request...");
 
 		System.out.println("");
-		
-		//TEST listFacilityProblems()
-		
-		
-		
 				
 		System.out.println("Listing Facility Maintenance Requests for Facility " + Damen.getID() + " " + Damen.getName() + ":");
 		System.out.println(Damen.listMaintRequests());

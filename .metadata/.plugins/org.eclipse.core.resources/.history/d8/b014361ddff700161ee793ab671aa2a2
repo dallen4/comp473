@@ -65,16 +65,17 @@ public class Main {
 		System.out.println("Creating Facility Maintenance Request...");
 
 		System.out.println("");
-		
-		//TEST listFacilityProblems()
-		
-		
-		
 				
-		System.out.println("Listing Facility Maintenance Requests for Facility " + Damen.getID() + " " + Damen.getName() + ":");
+		System.out.println("Listing Facility Problems for Facility " + Damen.getID() + " " + Damen.getName() + ":");
 		System.out.println(Damen.listMaintRequests());
+//		DamenMaint.listFacilityProblems()
 
 		System.out.println("");
+
+		// Complete a maintenance request
+		Damen.completeMaintRequest(1);
+		System.out.println(Damen.listMaintRequests());
+		//
 
 		// Schedule a maintenance request
 		Damen.scheduleMaintenance(1, "201705031830");
@@ -86,18 +87,6 @@ public class Main {
 
 		// Find total Cost
 		System.out.println(Damen.calcMaintenanceCostForFacility());
-		
-		
-		//TEST calcProblemRateForFacility()
-		
-		
-		//TEST calcDownTimeForFacility()
-		
-		
-		//TEST listMaintenance()
-		
-		
-		
 		
 		//END TESTS OF MAINTENANCE INTERFACE REQUIREMENTS
 		
@@ -112,33 +101,6 @@ public class Main {
 		
 		
 		//test assignFacilityToUse()
-		
-		
-		
-		//test vacateFacility()
-		
-		
-		
-		//test listInspections()
-		
-		
-		
-		//test listActualUsage()
-		
-		
-		
-		//test calcUsageRate()
-		
-		
-		
-		//test completeMaintRequest()
-		// Complete a maintenance request
-		Damen.completeMaintRequest(1);
-		System.out.println(Damen.listMaintRequests());
-		
-		
-		
-		//test addCost()
 		
 		
 		//END TESTS OF USE INTERFACE REQUIREMENTS

@@ -1,0 +1,16 @@
+package model.facility;
+
+import java.util.Date;
+
+public class Inspection {
+	
+	private int id;
+	private Date dateConducted;
+	private String inspector;
+	private boolean completed = false;
+
+	public Inspection() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

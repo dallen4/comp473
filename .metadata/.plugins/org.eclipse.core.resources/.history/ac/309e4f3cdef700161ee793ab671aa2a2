@@ -89,9 +89,5 @@ public class Inspection {
 			return false;
 		}
 	}
-	
-	public String getInfo () {
-		return "Inspection ID: " + getID() + "\nDate conducted: " + getDate() + "\nInspector: " + getInspector() + "\nCompleted: " + getCompleted();
-	}
 
 }

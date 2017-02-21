@@ -82,16 +82,12 @@ public class Inspection {
 		this.completed = newState;
 		
 		if (completed == newState) {
-			System.out.println("Completion status for Inspection " + getID() + " updated successfully...");
+			System.out.println("Completion status for Request " + getID() + " updated successfully...");
 			return true;
 		} else {
-			System.out.println("Completion for Inspection " + getID() + " was NOT updated successfully...");
+			System.out.println("Completion for Request " + getID() + " was NOT updated successfully...");
 			return false;
 		}
-	}
-	
-	public String getInfo () {
-		return "Inspection ID: " + getID() + "\nDate conducted: " + getDate() + "\nInspector: " + getInspector() + "\nCompleted: " + getCompleted();
 	}
 
 }
