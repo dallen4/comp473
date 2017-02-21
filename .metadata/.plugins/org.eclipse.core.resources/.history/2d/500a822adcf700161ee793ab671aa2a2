@@ -260,7 +260,8 @@ public class Facility implements IFacility, IMaintenance, IFacilityUse {
 
 	@Override
 	public boolean vacateFacility() {
-		return setCurrCapacity(0);
+		// TODO Auto-generated method stub
+		return false;
 	}
 
 	@Override
