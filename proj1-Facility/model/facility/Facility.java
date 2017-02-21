@@ -19,7 +19,6 @@ public class Facility implements IFacility, IMaintenance, IFacilityUse {
 	private String name;
 	private int currCapacity = 0;
 	private int potentialCapacity;
-	private Schedule facilityEvents = new Schedule(Calendar.getInstance());
 	private List<String> Details = new Vector<String>();
 	private List<Inspection> Inspections = new Vector<Inspection>();
 	private List<Request> maintRequests = new Vector<Request>();
