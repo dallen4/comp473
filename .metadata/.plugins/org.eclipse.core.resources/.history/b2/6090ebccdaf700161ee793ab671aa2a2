@@ -216,14 +216,7 @@ public class Facility implements IFacility, IMaintenance, IFacilityUse {
 	//lists COMPLETED maintenance
 	@Override
 	public List<String> listMaintenance() {
-		System.out.println("Listing all completed maintenance for Facility " + this.name + "...");
-		
-		for (int i = 0; i < maintRequests.size(); i++) {
-			if (maintRequests.get(i).getCompleted()) {
-				System.out.println("ID: " + maintRequests.get(i).getID());
-				System.out.println("Description: " + maintRequests.get(i).getDesc());
-			}
-		}
+		// TODO Auto-generated method stub
 		return null;
 	}
 

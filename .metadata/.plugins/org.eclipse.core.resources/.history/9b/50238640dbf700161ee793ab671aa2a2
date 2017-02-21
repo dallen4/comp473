@@ -154,9 +154,4 @@ public class Request {
 	public double getCost(){
 		return cost;
 	}
-	
-	@Override
-	public String toString() {
-		return "ID: " + getID() + "\nDescription: " + getDesc() + "\nComplete: " + getCompleted() + "\nScheduled for: " + getDateScheduled() + "\nThe maintenance cost is: " + getCost() + "$";
-	}
 }

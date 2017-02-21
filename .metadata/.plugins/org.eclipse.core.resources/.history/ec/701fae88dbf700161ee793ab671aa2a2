@@ -155,8 +155,11 @@ public class Request {
 		return cost;
 	}
 	
-	@Override
 	public String toString() {
-		return "ID: " + getID() + "\nDescription: " + getDesc() + "\nComplete: " + getCompleted() + "\nScheduled for: " + getDateScheduled() + "\nThe maintenance cost is: " + getCost() + "$";
+		System.out.println("ID: " + getID());
+		System.out.println("Description: " + getDesc());
+		System.out.println("Complete: " + getCompleted());
+		System.out.println("Scheduled for: " + getDateScheduled());
+		System.out.println("The maintenance cost is: " + getCost() + "$");
 	}
 }
