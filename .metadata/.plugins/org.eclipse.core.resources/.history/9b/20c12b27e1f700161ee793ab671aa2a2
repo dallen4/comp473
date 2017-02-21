@@ -67,14 +67,8 @@ public class Main {
 		System.out.println("");
 		
 		//TEST listFacilityProblems()
-		System.out.println("Displaying problems submitted via Maintenance Requests by Facility...");
-		for (int i = 0; i < Loyola.getFacilities().size(); i++) {
-			Facility temp = Loyola.getFacilities().get(i);
-			System.out.println("Facility " + temp.getID() + ":");
-			temp.listFacilityProblems();
-		}
 		
-		System.out.println("");
+		
 		
 				
 		System.out.println("Listing Facility Maintenance Requests for Facility " + Damen.getID() + " " + Damen.getName() + ":");
@@ -95,23 +89,13 @@ public class Main {
 		
 		
 		//TEST calcProblemRateForFacility()
-		System.out.println("Calculating problem rate by Facility (ratio of problems & requests solved versus total...");
-		for (int i = 0; i < Loyola.getFacilities().size(); i++) {
-			Facility temp = Loyola.getFacilities().get(i);
-			System.out.println("Facility " + temp.getID() + ":");
-			temp.calcProblemRateForFacility();
-		}
+		
 		
 		//TEST calcDownTimeForFacility()
 		
 		
 		//TEST listMaintenance()
-		System.out.println("Listing all completed Maintenance by Facility...");
-		for (int i = 0; i < Loyola.getFacilities().size(); i++) {
-			Facility temp = Loyola.getFacilities().get(i);
-			System.out.println("Facility " + temp.getID() + ":");
-			temp.listMaintenance();
-		}
+		
 		
 		
 		
@@ -132,12 +116,8 @@ public class Main {
 		
 		
 		//test vacateFacility()
-		System.out.println("Vacating all available facilities...");
-		for (int i = 0; i < Loyola.getFacilities().size(); i++) {
-			Facility temp = Loyola.getFacilities().get(i);
-			System.out.println("Vacated Facility " + temp.getID());
-			System.out.println("Current capacity: " + temp.getCurrCapacity());
-		}
+		
+		
 		
 		//test listInspections()
 		System.out.println("Printing all Inspections by Facility...");
@@ -160,8 +140,9 @@ public class Main {
 		Damen.completeMaintRequest(1);
 		System.out.println(Damen.listMaintRequests());
 		
-		//test addNewCost()
 		
+		
+		//test addCost()
 		
 		
 		//END TESTS OF USE INTERFACE REQUIREMENTS
