@@ -5,7 +5,7 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
-public class Request {
+public class Request implements IRequest{
 	
 	private int id;
 	private String description;

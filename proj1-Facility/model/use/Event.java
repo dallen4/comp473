@@ -5,7 +5,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 
-public class Event {
+public class Event implements IEvent {
 
     private Date eventDate;
     private String eventName;
