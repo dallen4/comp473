@@ -13,6 +13,11 @@ public class Event implements IEvent {
     private Integer facID;
 
     //CONSTRUCTOR
+
+    public Event(){
+
+    }
+
     public Event(String eventDate, String eventName, Integer eventID, Integer facID) {
         SimpleDateFormat format = new SimpleDateFormat("yyyyMMdd");
         Date date = null;
