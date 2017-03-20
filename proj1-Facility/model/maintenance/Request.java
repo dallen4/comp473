@@ -8,6 +8,7 @@ import java.util.Date;
 public class Request implements IRequest{
 	
 	private int id;
+	private int facID;
 	private String description;
 	private boolean completed;
 	private boolean scheduled;
@@ -18,7 +19,8 @@ public class Request implements IRequest{
 
 	//NEED TO IMPLEMENT COST CALCULATION
 
-	public Request(int id, String description) {
+	public Request(int facID, int id, String description) {
+		this.facID = facID;
 		this.id = id;
 		this.description = description;
 		scheduled = false;
@@ -39,6 +41,8 @@ public class Request implements IRequest{
 	public int getID() {
 		return id;
 	}
+
+	public int getFacID() { return facID;}
 	
 	public boolean setID (int newID) {
 		int temp = getID();

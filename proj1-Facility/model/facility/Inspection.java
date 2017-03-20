@@ -6,16 +6,18 @@ import java.util.Calendar;
 public class Inspection implements IInspection {
 	
 	private int id;
-	private Date dateConducted;
+	private String dateConducted;
 	private String inspector;
 	private boolean completed = false;
+	private int facID;
 
 	//CONSTRUCTOR
-	public Inspection(int id, Date date, String insp, boolean com) {
+	public Inspection(int id, String date, String insp, boolean com, int facID) {
 		this.id = id;
 		this.dateConducted = date;
 		this.inspector = insp;
 		this.completed = com;
+		this.facID = facID;
 	}
 	
 	//DEFAULT CONSTRUCTOR
@@ -24,7 +26,9 @@ public class Inspection implements IInspection {
 		dateConducted = null;
 		inspector = "John Doe";
 	}
-	
+
+	public int getFacID() { return facID;}
+
 	//GETTERS & SETTERS
 	public int getID() {
 		return id;
@@ -43,13 +47,13 @@ public class Inspection implements IInspection {
 		}
 	}
 	
-	public Date getDate () {
+	public String getDate () {
 		return dateConducted;
 	}
-	
-	public boolean setDate (Date newD) {
+
+	public boolean setDate (String newD) {
 		this.dateConducted = newD;
-		
+
 		if (this.dateConducted == newD) {
 			System.out.println("Date for inspection updated successfully successfully...");
 			return true;

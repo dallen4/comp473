@@ -3,6 +3,7 @@ package model.use;
 import model.facility.Inspection;
 import model.maintenance.Request;
 import model.use.IFacilityUse;
+import model.facility.Facility;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -22,9 +23,12 @@ public class FacilityUse implements IFacilityUse {
     private List<Event> eventList = new Vector<Event>();
 
 
+    public FacilityUse () {
+    }
+
     //REQUIRED METHOD
     @Override
-    public boolean isInUseDuringInterval(String eventDate) {
+    public boolean isInUseDuringInterval(Integer facID, String eventDate) {
         SimpleDateFormat format = new SimpleDateFormat("yyyyMMdd");
         Date date = null;
         try {
@@ -33,7 +37,7 @@ public class FacilityUse implements IFacilityUse {
             e.printStackTrace();
         }
         for (int i=0; i<eventList.size(); i++){
-            if (date.compareTo(eventList.get(i).getEventDate()) == 0){
+            if (date.compareTo(eventList.get(i).getEventDate()) == 0  && eventList.get(i).getFacID() == facID){
                 System.out.println("This date is already booked.");
                 return true;
             }
@@ -44,43 +48,61 @@ public class FacilityUse implements IFacilityUse {
 
 
     @Override
-    public boolean assignFacilityToUse(String eventDate, String eventName, Integer eventID) {
-        Event newEvent = new Event(eventDate,eventName,eventID);
+    public boolean assignFacilityToUse(String eventDate, String eventName, Integer eventID, Integer facID) {
+        Event newEvent = new Event(eventDate,eventName,eventID,facID);
         eventList.add(newEvent);
         System.out.println("Event with ID " + newEvent.getEventID() + " has been submitted successfully...");
         return true;
     }
 
     @Override
-    public boolean vacateFacility() {
-        return setCurrCapacity(0);
+    public boolean addInspection(int id, String date, String insp, boolean com, int facID) {
+        Inspection newInspection = new Inspection(id,date,insp,com,facID);
+        Inspections.add(newInspection);
+        System.out.println("Inspection with Details: " + newInspection.getInfo() + "Has been added to inspection list");
+        return true;
     }
 
     @Override
-    public List<Inspection> listInspections() {
-        System.out.println("Printing all Inspections for Facility " + this.FacilityID);
+    public boolean vacateFacility(Facility f) {
+        return f.setCurrCapacity(0);
+    }
+
+    @Override
+    public List<Inspection> listInspections(Integer facID) {
+        System.out.println("Printing all Inspections for Facility " + facID);
 
         for (int i = 0; i < Inspections.size(); i++) {
-            System.out.println(Inspections.get(i).getInfo());
+            if(Inspections.get(i).getFacID() == facID) {
+                System.out.println(Inspections.get(i).getInfo());
+            }
         }
 
         return Inspections;
     }
 
     @Override
-    public List<Event>  listActualUsage() {
-        System.out.println("Printing all Events for Facility " + this.FacilityID);
+    public List<Event>  listActualUsage(Integer facID) {
+        System.out.println("Printing all Events for Facility " + facID);
 
         for (int i = 0; i < eventList.size(); i++) {
+            if (Inspections.get(i).getFacID() == facID) {
             System.out.println(eventList.get(i).getEventInfo());
+        }
         }
         return eventList;
     }
 
     @Override
-    public double calcUsageRate() {
-        double use = eventList.size();
+    public double calcUsageRate(Integer facID) {
+        double use = 0;
+        for (int i = 0; i < eventList.size(); i++) {
+            if (Inspections.get(i).getFacID() == facID) {
+                use++;
+            }
+        }
         double usageRate = use/365;
+        System.out.println("The actual usage rate (use/365) for facilityID: " + facID + " is: " + usageRate);
         return usageRate;
     }
 

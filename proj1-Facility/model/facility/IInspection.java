@@ -9,8 +9,8 @@ public interface IInspection {
 
     public int getID();
     public boolean setID(int newID);
-    public Date getDate ();
-    public boolean setDate (Date newD);
+    public String getDate ();
+    public boolean setDate (String newD);
     public String getInspector ();
     public boolean setInspector (String insp);
     public boolean getCompleted ();

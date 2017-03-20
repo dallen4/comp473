@@ -17,7 +17,7 @@ public class Facility implements IFacility {
 	
 	private int id;
 	private String name;
-	private int currCapacity = 0;
+	private int currCapacity = 250;
 	private int potentialCapacity;
 	private List<String> Details = new Vector<String>();
 	private List<Inspection> Inspections = new Vector<Inspection>();
@@ -50,7 +50,11 @@ public class Facility implements IFacility {
 	
 	
 	//GETTERS & SETTERS
-	
+
+	public Facility getFacility() {
+		return this;
+	}
+
 	public int getID() {
 		return id;
 	}
@@ -90,6 +94,16 @@ public class Facility implements IFacility {
 	//REQUIRED METHOD
 	public int requestAvailableCapacity () {
 		return potentialCapacity - currCapacity;
+	}
+
+	public boolean setCurrCapacity(Integer newCap) {
+		this.currCapacity = newCap;
+
+		if (this.currCapacity == newCap) {
+			return true;
+		} else {
+			return false;
+		}
 	}
 	
 	//REQUIRED METHOD

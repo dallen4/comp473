@@ -12,14 +12,25 @@ import java.util.Vector;
  */
 public class Maintenance implements IMaintenance {
 
-    private String name;
     private List<Request> maintRequests = new Vector<Request>();
 
 
+    public Maintenance () {
+
+    }
+
+    public Maintenance (List<Request> listReq) {
+        this.maintRequests = listReq;
+    }
+
+    public List<Request> getRequests (){
+        return maintRequests;
+    }
+
     //REQUIRED METHOD
     @Override
-    public Request makeFacilityMaintRequest(int reqID, String reqDesc) {
-        Request newRequest = new Request (reqID, reqDesc);
+    public Request makeFacilityMaintRequest(int facID, int reqID, String reqDesc) {
+        Request newRequest = new Request (facID, reqID, reqDesc);
         maintRequests.add(newRequest);
         System.out.println("Request with ID " + newRequest.getID() + " has been submitted successfully...");
         return newRequest;
@@ -47,6 +58,7 @@ public class Maintenance implements IMaintenance {
 
                 System.out.println(cal.getTime());
                 maintRequests.get(i).setDateScheduled(cal);
+                maintRequests.get(i).setScheduled(true);
                 return cal;
             }
         }
@@ -56,31 +68,36 @@ public class Maintenance implements IMaintenance {
 
     //REQUIRED METHOD
     @Override
-    public double calcMaintenanceCostForFacility() {
+    public double calcMaintenanceCostForFacility(Integer facID) {
         double totalCost = 0;
         for(int i=0;i<maintRequests.size();i++){
-            double cost = maintRequests.get(i).getCost();
-            totalCost = totalCost + cost;
+            if(maintRequests.get(i).getFacID() == facID) {
+                double cost = maintRequests.get(i).getCost();
+                totalCost = totalCost + cost;
+            }
         }
+        System.out.println("The Total Cost is " + totalCost);
         return totalCost;
     }
 
     //REQUIRED METHOD
     //Calculates ratio of problems/requests completed versus
     @Override
-    public double calcProblemRateForFacility() {
+    public double calcProblemRateForFacility(Integer facId) {
         double complete = 0;
         double incomplete = 0;
         double scheduled = 0;
         double ratio;
 
         for (int i = 0; i < maintRequests.size(); i++) {
-            if (maintRequests.get(i).getCompleted()) {
-                complete++;
-            } else {
-                incomplete++;
-                if (maintRequests.get(i).getScheduled()) {
-                    scheduled++;
+            if(maintRequests.get(i).getFacID() == facId) {
+                if (maintRequests.get(i).getCompleted()) {
+                    complete++;
+                } else {
+                    incomplete++;
+                    if (maintRequests.get(i).getScheduled()) {
+                        scheduled++;
+                    }
                 }
             }
         }
@@ -93,11 +110,14 @@ public class Maintenance implements IMaintenance {
 
     //REQUIRED METHOD
     @Override
-    public double calcDownTimeForFacility() {
+    public double calcDownTimeForFacility(Integer facID) {
         double downtime = 0.0;
         for(int i=0; i<maintRequests.size(); i++){
-            downtime = downtime + maintRequests.get(i).getEstimatedWorktime();
+            if(maintRequests.get(i).getFacID() == facID) {
+                downtime = downtime + maintRequests.get(i).getEstimatedWorktime();
+            }
         }
+        System.out.println("The Downtime is " + downtime);
         return downtime;
     }
 
@@ -120,11 +140,12 @@ public class Maintenance implements IMaintenance {
     //REQUIRED METHOD
     //lists COMPLETED maintenance
     @Override
-    public List<String> listMaintenance() {
-        System.out.println("Listing all completed maintenance for Facility " + this.name + "...");
+    public List<String> listMaintenance(Integer facID) {
+        Integer facilityID = facID;
+        System.out.println("Listing all completed maintenance for Facility " + facilityID + "...");
 
         for (int i = 0; i < maintRequests.size(); i++) {
-            if (maintRequests.get(i).getCompleted()) {
+            if (maintRequests.get(i).getCompleted() && maintRequests.get(i).getFacID() == facilityID) {
                 System.out.println("ID: " + maintRequests.get(i).getID());
                 System.out.println("Description: " + maintRequests.get(i).getDesc());
             }
@@ -134,13 +155,14 @@ public class Maintenance implements IMaintenance {
 
     //REQUIRED METHOD
     @Override
-    public List<String> listFacilityProblems() {
+    public List<String> listFacilityProblems(Integer facID) {
         List<String> problems = new Vector<String>();
-
         for (int i = 0; i < maintRequests.size(); i++) {
-            String temp = maintRequests.get(i).getDesc();
-            System.out.println(temp);
-            problems.add(temp);
+            if (maintRequests.get(i).getFacID() == facID) {
+                String temp = maintRequests.get(i).getDesc();
+                System.out.println(temp);
+                problems.add(temp);
+            }
         }
         return problems;
     }

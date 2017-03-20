@@ -10,9 +10,10 @@ public class Event implements IEvent {
     private Date eventDate;
     private String eventName;
     private Integer eventID;
+    private Integer facID;
 
     //CONSTRUCTOR
-    public Event(String eventDate, String eventName, Integer eventID) {
+    public Event(String eventDate, String eventName, Integer eventID, Integer facID) {
         SimpleDateFormat format = new SimpleDateFormat("yyyyMMdd");
         Date date = null;
         try {
@@ -23,7 +24,10 @@ public class Event implements IEvent {
         this.eventID = eventID;
         this.eventDate = date;
         this.eventName = eventName;
+        this.facID = facID;
     }
+
+    public Integer getFacID() { return facID;}
 
     public Integer getEventID() {
         return eventID;

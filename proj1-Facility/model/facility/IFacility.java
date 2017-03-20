@@ -6,5 +6,6 @@ public interface IFacility {
 	public String getFacilityInformation();
 	public int requestAvailableCapacity();
 	public void addFacilityDetail(String newDetail);
-	
+	public Facility getFacility();
+	public boolean setCurrCapacity(Integer newCap);
 }
