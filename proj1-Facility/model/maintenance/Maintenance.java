@@ -24,6 +24,10 @@ public class Maintenance implements IMaintenance {
         this.maintRequests = listReq;
     }
 
+    public Maintenance getMaintenance () {
+        return this;
+    }
+
     public List<Request> getRequests (){
         return maintRequests;
     }
@@ -58,7 +62,7 @@ public class Maintenance implements IMaintenance {
                 cal.setTime(date);
 
                 System.out.println(cal.getTime());
-                maintRequests.get(i).setDateScheduled(cal);
+                maintRequests.get(i).setDateScheduled(maintenanceDate);
                 maintRequests.get(i).setScheduled(true);
                 return cal;
             }
@@ -125,7 +129,7 @@ public class Maintenance implements IMaintenance {
     public boolean completeMaintRequest(int maintID){
         for (int i = 0; i<maintRequests.size(); i++){
             if (maintID == maintRequests.get(i).getID()){
-                maintRequests.get(i).setCompleted(maintID,true);}
+                maintRequests.get(i).setCompleted(true);}
             return true;
         }
         System.out.println("ID not found");
@@ -135,7 +139,7 @@ public class Maintenance implements IMaintenance {
     public boolean addNewCost(int maintID, int cost){
         for (int i = 0; i<maintRequests.size(); i++){
             if (maintID == maintRequests.get(i).getID()){
-                maintRequests.get(i).setCost(maintID, cost);}
+                maintRequests.get(i).setCost(cost);}
             return true;
         }
         System.out.println("ID not found");
@@ -145,7 +149,7 @@ public class Maintenance implements IMaintenance {
     public boolean addWorktime(int maintID, double workTime){
         for (int i = 0; i<maintRequests.size(); i++){
             if (maintID == maintRequests.get(i).getID()){
-                maintRequests.get(i).setEstimatedWorkedTime(maintID, workTime);}
+                maintRequests.get(i).setEstimatedWorkedTime(workTime);}
             return true;
         }
         System.out.println("ID not found");
@@ -163,7 +167,7 @@ public class Maintenance implements IMaintenance {
             System.out.println("Complete: " + temp.getCompleted());
             System.out.println("Scheduled for: " + temp.getDateScheduled());
             System.out.println("The maintenance cost is: " + temp.getCost() + "$");
-            System.out.println("The estimated worktime is: " + temp.getEstimatedWorktime() + "hrs");
+            System.out.println("The estimated worktime is: " + temp.getEstimatedWorktime() + "hrs \n");
         }
         return maintRequests;
     }
@@ -178,7 +182,7 @@ public class Maintenance implements IMaintenance {
         for (int i = 0; i < maintRequests.size(); i++) {
             if (maintRequests.get(i).getCompleted() && maintRequests.get(i).getFacID() == facilityID) {
                 System.out.println("ID: " + maintRequests.get(i).getID());
-                System.out.println("Description: " + maintRequests.get(i).getDesc());
+                System.out.println("Description: " + maintRequests.get(i).getDesc() + "\n\n");
             }
         }
         return null;

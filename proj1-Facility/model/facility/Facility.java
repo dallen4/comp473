@@ -17,7 +17,7 @@ public class Facility implements IFacility {
 	
 	private int id;
 	private String name;
-	private int currCapacity = 250;
+	private int currCapacity = 0;
 	private int potentialCapacity;
 	private List<String> Details = new Vector<String>();
 

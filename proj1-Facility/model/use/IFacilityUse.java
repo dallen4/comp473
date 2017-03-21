@@ -16,4 +16,5 @@ public interface IFacilityUse {
 	public List<Event>  listActualUsage(Integer facID);
 	public double calcUsageRate(Integer facID);
 	public boolean addInspection(int id, String date, String insp, boolean com, int facID);
+	public FacilityUse getFacilityUse ();
 }

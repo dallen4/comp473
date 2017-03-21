@@ -19,15 +19,37 @@ public class Inspection implements IInspection {
 		this.completed = com;
 		this.facID = facID;
 	}
-	
+
+	@Override
+	public String toString() {
+		return "Inspection{" +
+				"id=" + id +
+				", dateConducted='" + dateConducted + '\'' +
+				", inspector='" + inspector + '\'' +
+				", completed=" + completed +
+				", facID=" + facID +
+				'}';
+	}
+
 	//DEFAULT CONSTRUCTOR
 	public Inspection() {
 		id = 0000;
 		dateConducted = null;
-		inspector = "John Doe";
 	}
 
 	public int getFacID() { return facID;}
+
+	public boolean setFacID(Integer facID) {
+		this.facID = facID;
+
+		if (this.facID == facID) {
+			System.out.println("Facility ID for Inspection " + getID() + " updated successfully...");
+			return true;
+		} else {
+			System.out.println("Facility ID for Inspection " + getID() + " was NOT updated successfully...");
+			return false;
+		}
+	}
 
 	//GETTERS & SETTERS
 	public int getID() {
@@ -68,7 +90,8 @@ public class Inspection implements IInspection {
 	}
 	
 	public boolean setInspector (String insp) {
-		
+		this.inspector = insp;
+
 		if (inspector == insp) {
 			System.out.println("Inspector for Inspection has been updated successfully...");
 			return true;

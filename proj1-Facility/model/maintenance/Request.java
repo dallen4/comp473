@@ -77,7 +77,7 @@ public class Request implements IRequest{
 		return completed;
 	}
 	
-	public boolean setCompleted (int ID, boolean newState) {
+	public boolean setCompleted (boolean newState) {
 		this.completed = newState;
 		
 		if (completed == newState) {
@@ -109,10 +109,26 @@ public class Request implements IRequest{
 		return dateCreated;
 	}
 	
-	public boolean setDateCreated (Calendar newDate) {
-		this.dateCreated = newDate;
+	public boolean setDateCreated (String newDate) {
+
+		String dateString = newDate;
+
+// format for year and month
+		SimpleDateFormat format = new SimpleDateFormat("yyyyMMddkkmm");
+// parse the date
+		Date date = null;
+		try {
+			date = format.parse(dateString);
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}
+
+		Calendar cal = Calendar.getInstance();
+		cal.setTime(date);
+
+		this.dateCreated = cal;
 		
-		if (dateCreated == newDate) {
+		if (dateCreated == cal) {
 			System.out.println("Creation date for Request " + getID() + " updated successfully...");
 			return true;
 		} else {
@@ -133,10 +149,26 @@ public class Request implements IRequest{
 		}
 	}
 	
-	public boolean setDateScheduled (Calendar scheduledDate) {
-		this.dateScheduled = scheduledDate;
-		
-		if (dateScheduled == scheduledDate) {
+	public boolean setDateScheduled (String scheduledDate) {
+
+		String dateString = scheduledDate;
+
+// format for year and month
+		SimpleDateFormat format = new SimpleDateFormat("yyyyMMddkkmm");
+// parse the date
+		Date date = null;
+		try {
+			date = format.parse(dateString);
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}
+
+		Calendar cal = Calendar.getInstance();
+		cal.setTime(date);
+
+		this.dateScheduled = cal;
+
+		if (dateScheduled == cal) {
 			System.out.println("Scheduled date for Request " + getID() + " updated successfully...");
 			return true;
 		} else {
@@ -145,7 +177,7 @@ public class Request implements IRequest{
 		}
 	}
 	// Sets the vector of all the costs
-	public boolean setCost(int id, double cost) {
+	public boolean setCost(double cost) {
 		this.cost = cost;
 
 		if (cost == cost) {
@@ -157,7 +189,7 @@ public class Request implements IRequest{
 		}
 	}
 
-	public boolean setEstimatedWorkedTime (int id, double estimatedWorktime) {
+	public boolean setEstimatedWorkedTime (double estimatedWorktime) {
 		this.estimatedWorktime = estimatedWorktime;
 		if (estimatedWorktime == estimatedWorktime) {
 			System.out.println("Updated worktime for Request " + getID() + " updated successfully...");

@@ -14,5 +14,5 @@ public interface IMaintenance {
 	public List<Request> listMaintRequests();
 	public List<String> listMaintenance(Integer facID);
 	public List<String> listFacilityProblems(Integer facID);
-	
+	public Maintenance getMaintenance ();
 }

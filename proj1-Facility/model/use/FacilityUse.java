@@ -21,11 +21,15 @@ public class FacilityUse implements IFacilityUse {
     private List<Inspection> Inspections = new Vector<Inspection>();
     private List<Request> maintRequests = new Vector<Request>();
     private List<Event> eventList = new Vector<Event>();
-    private List inspections;
+//    private List inspections;
 //    private List eventList;
 
 
     public FacilityUse () {
+    }
+
+    public FacilityUse getFacilityUse () {
+        return this;
     }
 
     //REQUIRED METHOD
@@ -126,11 +130,11 @@ public class FacilityUse implements IFacilityUse {
     }
 
     public void setInspections(List Inspections) {
-        inspections = Inspections;
+        this.Inspections = Inspections;
     }
 
     public List getInspections() {
-        return inspections;
+        return Inspections;
     }
 
     public void setEventList(List eventList) {

@@ -35,6 +35,16 @@ public class Event implements IEvent {
         this.facID = facID;
     }
 
+    @Override
+    public String toString() {
+        return "Event{" +
+                "eventDate=" + eventDate +
+                ", eventName='" + eventName + '\'' +
+                ", eventID=" + eventID +
+                ", facID=" + facID +
+                '}';
+    }
+
     public Integer getFacID() { return facID;}
 
     public Integer getEventID() {
@@ -49,4 +59,27 @@ public class Event implements IEvent {
         return eventDate;
     }
 
+    public void setEventDate(String eventDate) {
+        SimpleDateFormat format = new SimpleDateFormat("yyyyMMdd");
+        Date date = null;
+        try {
+            date = format.parse(eventDate);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+
+        this.eventDate = date;
+    }
+
+    public void setEventName(String eventName) {
+        this.eventName = eventName;
+    }
+
+    public void setEventID(Integer eventID) {
+        this.eventID = eventID;
+    }
+
+    public void setFacID(Integer facID) {
+        this.facID = facID;
+    }
 }
