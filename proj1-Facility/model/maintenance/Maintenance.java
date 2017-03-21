@@ -13,6 +13,7 @@ import java.util.Vector;
 public class Maintenance implements IMaintenance {
 
     private List<Request> maintRequests = new Vector<Request>();
+    //private List maintRequests;
 
 
     public Maintenance () {
@@ -121,6 +122,36 @@ public class Maintenance implements IMaintenance {
         return downtime;
     }
 
+    public boolean completeMaintRequest(int maintID){
+        for (int i = 0; i<maintRequests.size(); i++){
+            if (maintID == maintRequests.get(i).getID()){
+                maintRequests.get(i).setCompleted(maintID,true);}
+            return true;
+        }
+        System.out.println("ID not found");
+        return false;
+    }
+
+    public boolean addNewCost(int maintID, int cost){
+        for (int i = 0; i<maintRequests.size(); i++){
+            if (maintID == maintRequests.get(i).getID()){
+                maintRequests.get(i).setCost(maintID, cost);}
+            return true;
+        }
+        System.out.println("ID not found");
+        return false;
+    }
+
+    public boolean addWorktime(int maintID, double workTime){
+        for (int i = 0; i<maintRequests.size(); i++){
+            if (maintID == maintRequests.get(i).getID()){
+                maintRequests.get(i).setEstimatedWorkedTime(maintID, workTime);}
+            return true;
+        }
+        System.out.println("ID not found");
+        return false;
+    }
+
     //REQUIRED METHOD
     @Override
     public List<Request> listMaintRequests() {
@@ -165,6 +196,14 @@ public class Maintenance implements IMaintenance {
             }
         }
         return problems;
+    }
+
+    public void setMaintRequests(List maintRequests) {
+        this.maintRequests = maintRequests;
+    }
+
+    public List getMaintRequests() {
+        return maintRequests;
     }
 
     //end IMaintenance methods

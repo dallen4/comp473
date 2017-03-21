@@ -21,6 +21,8 @@ public class FacilityUse implements IFacilityUse {
     private List<Inspection> Inspections = new Vector<Inspection>();
     private List<Request> maintRequests = new Vector<Request>();
     private List<Event> eventList = new Vector<Event>();
+    private List inspections;
+//    private List eventList;
 
 
     public FacilityUse () {
@@ -106,35 +108,7 @@ public class FacilityUse implements IFacilityUse {
         return usageRate;
     }
 
-    public boolean completeMaintRequest(int maintID){
-        for (int i = 0; i<maintRequests.size(); i++){
-            if (maintID == maintRequests.get(i).getID()){
-                maintRequests.get(i).setCompleted(maintID,true);}
-            return true;
-        }
-        System.out.println("ID not found");
-        return false;
-    }
 
-    public boolean addNewCost(int maintID, int cost){
-        for (int i = 0; i<maintRequests.size(); i++){
-            if (maintID == maintRequests.get(i).getID()){
-                maintRequests.get(i).setCost(maintID, cost);}
-            return true;
-        }
-        System.out.println("ID not found");
-        return false;
-    }
-
-    public boolean addWorktime(int maintID, double workTime){
-        for (int i = 0; i<maintRequests.size(); i++){
-            if (maintID == maintRequests.get(i).getID()){
-                maintRequests.get(i).setEstimatedWorkedTime(maintID, workTime);}
-            return true;
-        }
-        System.out.println("ID not found");
-        return false;
-    }
 
 
     public Integer getCurrCapacity() {
@@ -149,5 +123,21 @@ public class FacilityUse implements IFacilityUse {
         } else {
             return false;
         }
+    }
+
+    public void setInspections(List Inspections) {
+        inspections = Inspections;
+    }
+
+    public List getInspections() {
+        return inspections;
+    }
+
+    public void setEventList(List eventList) {
+        this.eventList = eventList;
+    }
+
+    public List getEventList() {
+        return eventList;
     }
 }

@@ -20,10 +20,19 @@ public class Facility implements IFacility {
 	private int currCapacity = 250;
 	private int potentialCapacity;
 	private List<String> Details = new Vector<String>();
-	private List<Inspection> Inspections = new Vector<Inspection>();
-	private List<Request> maintRequests = new Vector<Request>();
-	private List<Event> eventList = new Vector<Event>();
-	
+
+
+	@Override
+	public String toString() {
+		return "Facility{" +
+				"id=" + id +
+				", name='" + name + '\'' +
+				", currCapacity=" + currCapacity +
+				", potentialCapacity=" + potentialCapacity +
+				", Details=" + Details +
+				'}';
+	}
+
 	//CONSTRUCTORS
 	public Facility(int id, String name) {
 		this.id = id;
@@ -82,6 +91,38 @@ public class Facility implements IFacility {
 			return false;
 		}
 	}
+
+	public Integer getPotentialCapacity() {
+		return potentialCapacity;
+	}
+
+	public boolean setPotentialCapacity(Integer potCap) {
+		this.potentialCapacity = potCap;
+
+		if (this.potentialCapacity == potCap) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+
+	public Integer getCurrentCapacity() {
+		return currCapacity;
+	}
+
+	public List<String> getDetails() {
+		return Details;
+	}
+
+	public boolean setDetails(List<String> details) {
+		this.Details = details;
+
+		if (this.Details == details) {
+			return true;
+		} else {
+			return false;
+		}
+	}
 	
 	//REQUIRED METHOD
 	public String getFacilityInformation() {
@@ -112,7 +153,8 @@ public class Facility implements IFacility {
 		System.out.println("A new facility detail has been submitted successfully...");
 		return;
 	}
-	
+
+
 	//end IFacility methods
 }
 

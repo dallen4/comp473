@@ -13,15 +13,26 @@ public class Manager {
 	private List<IFacility> Facilities = new Vector<IFacility>();
 	private IFacilityUse FacUse = new FacilityUse();
 	private IMaintenance FacMaint = new Maintenance();
+	private List facilities;
+	private Maintenance facMaint;
+	private FacilityUse facilityUse;
 
 	public Manager() {
 		// TODO Auto-generated constructor stub
 	}
-	
-	public List<IFacility> getFacilities () {
-		return Facilities;
+
+	@Override
+	public String toString() {
+		return "Manager{" +
+				"Facilities=" + Facilities +
+				", FacUse=" + FacUse +
+				", FacMaint=" + FacMaint +
+				", facilities=" + facilities +
+				", facMaint=" + facMaint +
+				", facilityUse=" + facilityUse +
+				'}';
 	}
-	
+
 	//REQUIRED METHOD
 	public boolean addNewFacility(Facility newFacility) {
 		return Facilities.add(newFacility);
@@ -53,9 +64,6 @@ public class Manager {
 		}
 	}
 
-	public FacilityUse getFacilityUse () {
-		return (FacilityUse) FacUse;
-	}
 
 	public boolean setFacilityMaintenance(IMaintenance newMaint) {
 		this.FacMaint = newMaint;
@@ -69,5 +77,29 @@ public class Manager {
 
 	public Maintenance getFacilityMaintenance () {
 		return (Maintenance) FacMaint;
+	}
+
+	public void setFacilities(List Facilities) {
+		facilities = Facilities;
+	}
+
+	public List getFacilities() {
+		return facilities;
+	}
+
+	public void setFacMaint(Maintenance facMaint) {
+		this.facMaint = facMaint;
+	}
+
+	public Maintenance getFacMaint() {
+		return facMaint;
+	}
+
+	public void setFacilityUse(FacilityUse facilityUse) {
+		this.facilityUse = facilityUse;
+	}
+
+	public FacilityUse getFacilityUse() {
+		return facilityUse;
 	}
 }

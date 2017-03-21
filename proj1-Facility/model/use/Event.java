@@ -1,5 +1,8 @@
 package model.use;
 
+import model.facility.Inspection;
+import model.maintenance.Request;
+
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -45,4 +48,5 @@ public class Event implements IEvent {
     public Date getEventDate() {
         return eventDate;
     }
+
 }

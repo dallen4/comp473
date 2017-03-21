@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans>
 <beans xmlns="http://www.springframework.org/schema/beans"
 	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	   xmlns:context="http://www.springframework.org/schema/context"
@@ -14,23 +15,41 @@ http://www.springframework.org/schema/context ">
 
 	<bean id="request" class="model.maintenance.Request" scope="prototype"/>
 
-	<bean id="event" class="model.use.Event" scope="prototype">
-
-	</bean>
+	<bean id="event" class="model.use.Event" scope="prototype"/>
 
 	<bean id="facility" class="model.facility.Facility" scope="prototype">
-		<!-- unfinished -->
+		<constructor-arg name="id" value="0"></constructor-arg>
+		<constructor-arg name="name" value="damen"></constructor-arg>
 	</bean>
 
 	<bean id="maintenance" class="model.maintenance.Maintenance" scope="prototype">
-		<!-- unfinished -->
+		<property name="maintRequests" >
+			<list>
+				<ref bean="request"/>
+			</list>
+		</property>
 	</bean>
 
 	<bean id="facilityUse" class="model.use.FacilityUse" scope="prototype">
-		<!-- unfinished -->
+		<property name="Inspections">
+			<list>
+				<ref bean="inspection"/>
+			</list>
+		</property>
+		<property name="eventList">
+			<list>
+				<ref bean="event"/>
+			</list>
+		</property>
 	</bean>
 
 	<bean id="manager" class="model.facility.Manager" scope="prototype">
-		<!-- unfinished -->
+		<property name="Facilities" >
+			<list>
+				<ref bean="facility"/>
+			</list>
+		</property>
+		<property name="facMaint" ref="maintenance"></property>
+		<property name="facilityUse" ref="facilityUse"></property>
 	</bean>
 </beans>
