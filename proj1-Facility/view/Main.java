@@ -22,12 +22,11 @@ public class Main {
 		ApplicationContext context;
 		context = new ClassPathXmlApplicationContext("app-context.xml");
 
-		Facility facility10 = (Facility) context.getBean("facility");
-		System.out.println(facility10);
+		System.out.println("******  Starting Facility Management System  ******");
+
+		System.out.println("Creating Manager object...");
 
 		Manager manager = (Manager)context.getBean("manager");
-
-		System.out.println(manager);
 
 		List<Facility> facilityList = manager.getFacilities();
 
