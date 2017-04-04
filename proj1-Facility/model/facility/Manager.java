@@ -10,9 +10,9 @@ import java.util.Vector;
 
 public class Manager {
 	
-	private List<IFacility> Facilities = new Vector<IFacility>();
-	private IFacilityUse FacUse = new FacilityUse();
-	private IMaintenance FacMaint = new Maintenance();
+	private List<IFacility> Facilities;
+	private IFacilityUse FacUse;
+	private IMaintenance FacMaint;
 	private List facilities;
 	private Maintenance facMaint;
 	private FacilityUse facilityUse;
