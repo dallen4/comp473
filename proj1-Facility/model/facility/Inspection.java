@@ -1,8 +1,5 @@
 package model.facility;
 
-import java.util.Date;
-import java.util.Calendar;
-
 public class Inspection implements IInspection {
 	
 	private int id;

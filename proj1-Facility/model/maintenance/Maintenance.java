@@ -12,9 +12,7 @@ import java.util.Vector;
  */
 public class Maintenance implements IMaintenance {
 
-    private List<Request> maintRequests = new Vector<Request>();
-    //private List maintRequests;
-
+    private List<Request> maintRequests;
 
     public Maintenance () {
 
