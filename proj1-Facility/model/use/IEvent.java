@@ -9,12 +9,7 @@ import model.use.Event;
  */
 public interface IEvent {
 
-    public Integer getEventID();
     public String getEventInfo();
-    public Date getEventDate();
-    public void setEventDate(String eventDate);
     public void setEventName(String eventName);
-    public void setEventID(Integer eventID);
-    public void setFacID(Integer facID);
 
 }

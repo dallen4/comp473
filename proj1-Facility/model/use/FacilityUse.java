@@ -1,15 +1,12 @@
 package model.use;
 
 import model.facility.Inspection;
-import model.maintenance.Request;
-import model.use.IFacilityUse;
 import model.facility.Facility;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
-import java.util.Vector;
 
 /**
  * Created by Lanzer on 3/19/17.
@@ -52,7 +49,7 @@ public class FacilityUse implements IFacilityUse {
 
     @Override
     public boolean assignFacilityToUse(String eventDate, String eventName, Integer eventID, Integer facID) {
-        Event newEvent = new Event(eventDate,eventName,eventID,facID);
+        Event newEvent = new Event(eventDate,eventName,eventID,facID, dateCreated, dateScheduled);
         eventList.add(newEvent);
         System.out.println("Event with ID " + newEvent.getEventID() + " has been submitted successfully...");
         return true;
