@@ -1,14 +1,13 @@
 package model.use;
 
-import model.facility.Inspection;
-import model.maintenance.Request;
+import model.facility.Occurance;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
 
-public class Event implements IEvent {
+public class Event extends Occurance implements IEvent  {
 
     private Date eventDate;
     private String eventName;
@@ -81,5 +80,34 @@ public class Event implements IEvent {
 
     public void setFacID(Integer facID) {
         this.facID = facID;
+    }
+
+
+
+    /// NEED TO IMPLEMENT THESE
+    @Override
+    public boolean setCompleted(boolean completed) {
+        completed = true;
+        return true;
+    }
+
+    @Override
+    public boolean setDateCreated(Date dateCreated) {
+       return true;
+    }
+
+    @Override
+    public boolean setDateScheduled(Date dateScheduled) {
+        return true;
+    }
+
+    @Override
+    public boolean setID(int ID) {
+        return true;
+    }
+
+    @Override
+    public boolean setFacID(int facID) {
+        return true;
     }
 }

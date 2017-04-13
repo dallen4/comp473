@@ -1,11 +1,13 @@
 package model.maintenance;
 
+import model.facility.Occurance;
+
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
-public class Request implements IRequest{
+public class Request extends Occurance implements IRequest{
 	
 	private int id;
 	private int facID;
@@ -57,6 +59,11 @@ public class Request implements IRequest{
 		}
 	}
 
+	@Override
+	public boolean setFacID(int facID) {
+		return true;
+	}
+
 	public String getDesc () {
 		return description;
 	}
@@ -88,7 +95,17 @@ public class Request implements IRequest{
 			return false;
 		}
 	}
-	
+
+	@Override
+	public boolean setDateCreated(Date dateCreated) {
+		         return true;
+	}
+
+	@Override
+	public boolean setDateScheduled(Date dateScheduled) {
+		  return true;
+	}
+
 	public boolean getScheduled () {
 		return scheduled;
 	}

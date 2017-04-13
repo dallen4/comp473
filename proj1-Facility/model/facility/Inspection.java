@@ -1,9 +1,8 @@
 package model.facility;
 
 import java.util.Date;
-import java.util.Calendar;
 
-public class Inspection implements IInspection {
+public class Inspection extends Occurance implements IInspection {
 	
 	private int id;
 	private String dateConducted;
@@ -68,7 +67,12 @@ public class Inspection implements IInspection {
 			return false;
 		}
 	}
-	
+
+	@Override
+	public boolean setFacID(int facID) {
+		return true;
+	}
+
 	public String getDate () {
 		return dateConducted;
 	}
@@ -116,7 +120,17 @@ public class Inspection implements IInspection {
 			return false;
 		}
 	}
-	
+
+	@Override
+	public boolean setDateCreated(Date dateCreated) {
+		return true;
+	}
+
+	@Override
+	public boolean setDateScheduled(Date dateScheduled) {
+		return true;
+	}
+
 	public String getInfo () {
 		return "Inspection ID: " + getID() + "\nDate conducted: " + getDate() + "\nInspector: " + getInspector() + "\nCompleted: " + getCompleted();
 	}

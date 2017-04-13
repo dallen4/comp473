@@ -5,18 +5,12 @@ import java.util.List;
 public interface IFacility {
 
 	public int getID();
-
 	public boolean setID (int id);
-
 	public String getName();
-
 	public boolean setName(String newName);
-
 	public List<String> getDetails();
 	public boolean setDetails(List<String> details);
-
 	public Integer getCurrentCapacity();
-
 	public Integer getPotentialCapacity();
 	public boolean setPotentialCapacity(Integer potCap);
 
