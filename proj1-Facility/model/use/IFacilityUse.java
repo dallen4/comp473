@@ -1,8 +1,7 @@
 package model.use;
 
-import java.util.Date;
-import java.util.List;
 
+import java.util.List;
 import model.facility.Facility;
 import model.facility.Inspection;
 

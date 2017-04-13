@@ -1,17 +1,7 @@
 package model.facility;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.List;
-import java.util.Vector;
-import java.util.Calendar;
-import java.util.Date;
-import java.text.DateFormat;
 
-import model.maintenance.*;
-import model.use.Event;
-import model.use.IFacilityUse;
-import model.use.Event;
+import java.util.List;
 
 public class Facility implements IFacility {
 	
@@ -19,7 +9,7 @@ public class Facility implements IFacility {
 	private String name;
 	private int currCapacity = 0;
 	private int potentialCapacity;
-	private List<String> Details = new Vector<String>();
+	private List<String> Details;
 
 
 	@Override

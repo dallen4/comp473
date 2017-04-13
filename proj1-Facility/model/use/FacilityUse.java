@@ -16,14 +16,9 @@ import java.util.Vector;
  */
 public class FacilityUse implements IFacilityUse {
 
-    private Integer FacilityID;
     private Integer currCapacity;
-    private List<Inspection> Inspections = new Vector<Inspection>();
-    private List<Request> maintRequests = new Vector<Request>();
-    private List<Event> eventList = new Vector<Event>();
-//    private List inspections;
-//    private List eventList;
-
+    private List<Inspection> Inspections;
+    private List<Event> eventList;
 
     public FacilityUse () {
     }
@@ -52,6 +47,8 @@ public class FacilityUse implements IFacilityUse {
         return false;
     }
 
+
+//    FIX SPRING IMPLEMENTATION
 
     @Override
     public boolean assignFacilityToUse(String eventDate, String eventName, Integer eventID, Integer facID) {

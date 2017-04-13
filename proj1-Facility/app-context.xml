@@ -21,7 +21,7 @@
 	</bean>
 
 	<bean id="maintenance" class="model.maintenance.Maintenance" scope="prototype">
-		<property name="maintRequests" >
+		<property name="maintRequests">
 			<list>
 				<ref bean="request"/>
 			</list>
@@ -42,7 +42,7 @@
 	</bean>
 
 	<bean id="manager" class="model.facility.Manager" scope="prototype">
-		<property name="Facilities" >
+		<property name="Facilities">
 			<list>
 				<ref bean="facility"/>
 			</list>
