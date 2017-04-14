@@ -14,20 +14,29 @@ public class Request extends Occurance implements IRequest{
 	private String description;
 	private boolean completed;
 	private boolean scheduled;
-	private Calendar dateCreated;
-	private Calendar dateScheduled = null;
+	private Date dateCreated;
+	private Date dateScheduled;
 	private double cost = 20.0;
 	private double estimatedWorktime;
 
 	//NEED TO IMPLEMENT COST CALCULATION
 
-	public Request(int facID, int id, String description) {
+	public Request(int facID, int id, String description, String dateCreated, String dateScheduled) {
 		this.facID = facID;
 		this.id = id;
 		this.description = description;
 		scheduled = false;
 		completed = false;
-		dateCreated = Calendar.getInstance();
+
+		SimpleDateFormat format = new SimpleDateFormat("yyyyMMdd");
+
+		try {
+			this.dateCreated = format.parse(dateCreated);
+			this.dateScheduled = format.parse(dateScheduled);
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}
+
 	}
 	
 	// DEFAULT CONSTRUCTOR
@@ -96,16 +105,6 @@ public class Request extends Occurance implements IRequest{
 		}
 	}
 
-	@Override
-	public boolean setDateCreated(Date dateCreated) {
-		         return true;
-	}
-
-	@Override
-	public boolean setDateScheduled(Date dateScheduled) {
-		  return true;
-	}
-
 	public boolean getScheduled () {
 		return scheduled;
 	}
@@ -122,77 +121,56 @@ public class Request extends Occurance implements IRequest{
 		}
 	}
 	
-	public Calendar getDateCreated () {
-		return dateCreated;
+	public String getDateCreated () {
+		return dateCreated.toString();
 	}
-	
+
+	@Override
 	public boolean setDateCreated (String newDate) {
-
-		String dateString = newDate;
-
-// format for year and month
-		SimpleDateFormat format = new SimpleDateFormat("yyyyMMddkkmm");
-// parse the date
+		SimpleDateFormat format = new SimpleDateFormat("yyyyMMdd");
 		Date date = null;
 		try {
-			date = format.parse(dateString);
+			date = format.parse(newDate);
 		} catch (ParseException e) {
 			e.printStackTrace();
 		}
 
-		Calendar cal = Calendar.getInstance();
-		cal.setTime(date);
+		this.dateCreated = date;
 
-		this.dateCreated = cal;
-		
-		if (dateCreated == cal) {
-			System.out.println("Creation date for Request " + getID() + " updated successfully...");
+		if (this.dateCreated == date)
 			return true;
-		} else {
-			System.out.println("Creation date for Request " + getID() + " was NOT updated successfully...");
+		else
 			return false;
-		}
 	}
 
 	
 	public String getDateScheduled () {
-		if (dateScheduled != null){
-			Calendar cal = dateScheduled;
-			Date date = cal.getTime();
-			return date.toString();
+		if (dateScheduled != null) {
+			return dateScheduled.toString();
 		}
 		else {
 			return "Not Scheduled";
 		}
 	}
-	
+
+	@Override
 	public boolean setDateScheduled (String scheduledDate) {
-
-		String dateString = scheduledDate;
-
-// format for year and month
-		SimpleDateFormat format = new SimpleDateFormat("yyyyMMddkkmm");
-// parse the date
+		SimpleDateFormat format = new SimpleDateFormat("yyyyMMdd");
 		Date date = null;
 		try {
-			date = format.parse(dateString);
+			date = format.parse(scheduledDate);
 		} catch (ParseException e) {
 			e.printStackTrace();
 		}
 
-		Calendar cal = Calendar.getInstance();
-		cal.setTime(date);
+		this.dateCreated = date;
 
-		this.dateScheduled = cal;
-
-		if (dateScheduled == cal) {
-			System.out.println("Scheduled date for Request " + getID() + " updated successfully...");
+		if (this.dateCreated == date)
 			return true;
-		} else {
-			System.out.println("Scheduled date for Request " + getID() + " was NOT updated successfully...");
+		else
 			return false;
-		}
 	}
+
 	// Sets the vector of all the costs
 	public boolean setCost(double cost) {
 		this.cost = cost;

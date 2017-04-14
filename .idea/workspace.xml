@@ -3,10 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="9b12c8cb-8ae0-435e-97bf-3c26768c55c7" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/proj1-Facility/model/facility/Occurance.java" afterPath="$PROJECT_DIR$/proj1-Facility/model/facility/Occurance.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/proj1-Facility/model/use/Event.java" afterPath="$PROJECT_DIR$/proj1-Facility/model/use/Event.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/proj1-Facility/model/use/FacilityUse.java" afterPath="$PROJECT_DIR$/proj1-Facility/model/use/FacilityUse.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/proj1-Facility/model/use/IEvent.java" afterPath="$PROJECT_DIR$/proj1-Facility/model/use/IEvent.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/proj1-Facility/model/facility/IInspection.java" afterPath="$PROJECT_DIR$/proj1-Facility/model/facility/IInspection.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/proj1-Facility/model/facility/Inspection.java" afterPath="$PROJECT_DIR$/proj1-Facility/model/facility/Inspection.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/proj1-Facility/model/maintenance/IRequest.java" afterPath="$PROJECT_DIR$/proj1-Facility/model/maintenance/IRequest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/proj1-Facility/model/maintenance/Request.java" afterPath="$PROJECT_DIR$/proj1-Facility/model/maintenance/Request.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -29,110 +29,187 @@
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="app-context.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/proj1-Facility/app-context.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="17" column="4" lean-forward="false" selection-start-line="17" selection-start-column="4" selection-end-line="17" selection-end-column="4" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/proj1-Facility/view/Main.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1875">
-              <caret line="138" column="32" lean-forward="false" selection-start-line="138" selection-start-column="32" selection-end-line="138" selection-end-column="32" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Inspection.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/proj1-Facility/model/facility/Inspection.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="4" column="13" lean-forward="false" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Facility.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/proj1-Facility/model/facility/Facility.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="9" column="32" lean-forward="false" selection-start-line="9" selection-start-column="32" selection-end-line="9" selection-end-column="32" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Occurance.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/proj1-Facility/model/facility/Occurance.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="19" column="51" lean-forward="false" selection-start-line="19" selection-start-column="51" selection-end-line="19" selection-end-column="51" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Event.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/proj1-Facility/model/use/Event.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="499">
-              <caret line="71" column="5" lean-forward="false" selection-start-line="71" selection-start-column="5" selection-end-line="71" selection-end-column="5" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Maintenance.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/proj1-Facility/model/maintenance/Maintenance.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="IRequest.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/proj1-Facility/model/maintenance/IRequest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="21" column="43" lean-forward="false" selection-start-line="21" selection-start-column="43" selection-end-line="21" selection-end-column="43" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Request.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/proj1-Facility/model/maintenance/Request.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="825">
-              <caret line="63" column="20" lean-forward="false" selection-start-line="63" selection-start-column="20" selection-end-line="63" selection-end-column="20" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="IEvent.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/proj1-Facility/model/use/IEvent.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <splitter split-orientation="horizontal" split-proportion="0.41984057">
+      <split-first>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file leaf-file-name="app-context.xml" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/proj1-Facility/app-context.xml">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="255">
+                  <caret line="17" column="4" lean-forward="false" selection-start-line="17" selection-start-column="4" selection-end-line="17" selection-end-column="4" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/proj1-Facility/view/Main.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="551">
+                  <caret line="138" column="32" lean-forward="false" selection-start-line="138" selection-start-column="32" selection-end-line="138" selection-end-column="32" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="Facility.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/proj1-Facility/model/facility/Facility.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="135">
+                  <caret line="9" column="32" lean-forward="false" selection-start-line="9" selection-start-column="32" selection-end-line="9" selection-end-column="32" />
+                  <folding>
+                    <element signature="e#1063#1064#0" expanded="false" />
+                    <element signature="e#1081#1082#0" expanded="false" />
+                    <element signature="e#1104#1105#0" expanded="false" />
+                    <element signature="e#1120#1121#0" expanded="false" />
+                    <element signature="e#1277#1278#0" expanded="false" />
+                    <element signature="e#1295#1296#0" expanded="false" />
+                    <element signature="e#1488#1489#0" expanded="false" />
+                    <element signature="e#1519#1520#0" expanded="false" />
+                    <element signature="e#1744#1745#0" expanded="false" />
+                    <element signature="e#1770#1771#0" expanded="false" />
+                    <element signature="e#1807#1808#0" expanded="false" />
+                    <element signature="e#1828#1829#0" expanded="false" />
+                    <element signature="e#2333#2334#0" expanded="false" />
+                    <element signature="e#2379#2380#0" expanded="false" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="Occurance.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/proj1-Facility/model/facility/Occurance.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="345">
+                  <caret line="23" column="35" lean-forward="true" selection-start-line="23" selection-start-column="35" selection-end-line="23" selection-end-column="35" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="Maintenance.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/proj1-Facility/model/maintenance/Maintenance.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="105">
+                  <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+                  <folding>
+                    <element signature="imports" expanded="false" />
+                    <element signature="e#413#414#0" expanded="false" />
+                    <element signature="e#457#458#0" expanded="false" />
+                    <element signature="e#501#502#0" expanded="false" />
+                    <element signature="e#528#529#0" expanded="false" />
+                    <element signature="e#570#571#0" expanded="false" />
+                    <element signature="e#606#607#0" expanded="false" />
+                    <element signature="e#6364#6372#0" expanded="false" />
+                    <element signature="e#6742#6743#0" expanded="false" />
+                    <element signature="e#6792#6793#0" expanded="false" />
+                    <element signature="e#6830#6831#0" expanded="false" />
+                    <element signature="e#6866#6867#0" expanded="false" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="IRequest.java" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/proj1-Facility/model/maintenance/IRequest.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="270">
+                  <caret line="19" column="17" lean-forward="false" selection-start-line="19" selection-start-column="17" selection-end-line="19" selection-end-column="17" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="IEvent.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/proj1-Facility/model/use/IEvent.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="135">
+                  <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-first>
+      <split-second>
+        <leaf>
+          <file leaf-file-name="Occurance.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/proj1-Facility/model/facility/Occurance.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="240">
+                  <caret line="16" column="28" lean-forward="false" selection-start-line="16" selection-start-column="28" selection-end-line="16" selection-end-column="28" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="FacilityUse.java" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/proj1-Facility/model/use/FacilityUse.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="195">
+                  <caret line="37" column="47" lean-forward="false" selection-start-line="37" selection-start-column="47" selection-end-line="37" selection-end-column="47" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="Event.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/proj1-Facility/model/use/Event.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="263">
+                  <caret line="74" column="54" lean-forward="false" selection-start-line="74" selection-start-column="54" selection-end-line="74" selection-end-column="54" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="Inspection.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/proj1-Facility/model/facility/Inspection.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="270">
+                  <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                    <element signature="e#1473#1474#0" expanded="true" />
+                    <element signature="e#1489#1490#0" expanded="true" />
+                    <element signature="e#1922#1923#0" expanded="true" />
+                    <element signature="e#1949#1950#0" expanded="true" />
+                    <element signature="e#1983#1984#0" expanded="true" />
+                    <element signature="e#2008#2009#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="Request.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/proj1-Facility/model/maintenance/Request.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="253">
+                  <caret line="124" column="37" lean-forward="false" selection-start-line="124" selection-start-column="37" selection-end-line="124" selection-end-column="37" />
+                  <folding>
+                    <element signature="e#1647#1648#0" expanded="true" />
+                    <element signature="e#1665#1666#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="IInspection.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/proj1-Facility/model/facility/IInspection.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="180">
+                  <caret line="12" column="46" lean-forward="false" selection-start-line="12" selection-start-column="46" selection-end-line="12" selection-end-column="46" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-second>
+    </splitter>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -199,21 +276,21 @@
         <option value="$PROJECT_DIR$/proj1-Facility/model/facility/Facilities.java" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/proj1-Facility/model/facility/Manager.java" />
-        <option value="$PROJECT_DIR$/proj1-Facility/model/maintenance/IRequest.java" />
         <option value="$PROJECT_DIR$/proj1-Facility/model/maintenance/IMaintenance.java" />
         <option value="$PROJECT_DIR$/proj1-Facility/model/use/IFacilityUse.java" />
         <option value="$PROJECT_DIR$/proj1-Facility/model/facility/Facility.java" />
         <option value="$PROJECT_DIR$/proj1-Facility/model/maintenance/Maintenance.java" />
         <option value="$PROJECT_DIR$/proj1-Facility/model/use/FacilityUse.java" />
-        <option value="$PROJECT_DIR$/proj1-Facility/model/facility/IInspection.java" />
         <option value="$PROJECT_DIR$/proj1-Facility/view/Main.java" />
         <option value="$PROJECT_DIR$/proj1-Facility/app-context.xml" />
         <option value="$PROJECT_DIR$/proj1-Facility/model/facility/IFacility.java" />
-        <option value="$PROJECT_DIR$/proj1-Facility/model/maintenance/Request.java" />
-        <option value="$PROJECT_DIR$/proj1-Facility/model/facility/Inspection.java" />
         <option value="$PROJECT_DIR$/proj1-Facility/model/use/IEvent.java" />
-        <option value="$PROJECT_DIR$/proj1-Facility/model/use/Event.java" />
         <option value="$PROJECT_DIR$/proj1-Facility/model/facility/Occurance.java" />
+        <option value="$PROJECT_DIR$/proj1-Facility/model/use/Event.java" />
+        <option value="$PROJECT_DIR$/proj1-Facility/model/facility/IInspection.java" />
+        <option value="$PROJECT_DIR$/proj1-Facility/model/facility/Inspection.java" />
+        <option value="$PROJECT_DIR$/proj1-Facility/model/maintenance/IRequest.java" />
+        <option value="$PROJECT_DIR$/proj1-Facility/model/maintenance/Request.java" />
       </list>
     </option>
   </component>
@@ -224,10 +301,10 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-1279" />
-    <option name="y" value="99" />
+    <option name="x" value="-1280" />
+    <option name="y" value="23" />
     <option name="width" value="1280" />
-    <option name="height" value="845" />
+    <option name="height" value="1001" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -821,7 +898,7 @@
       <workItem from="1490064523154" duration="6468000" />
       <workItem from="1491246430996" duration="1762000" />
       <workItem from="1492120632899" duration="2842000" />
-      <workItem from="1492123586793" duration="2070000" />
+      <workItem from="1492123586793" duration="4671000" />
     </task>
     <task id="LOCAL-00001" summary="Added some functionality to the Facility class, Cost class, and Maintenance class">
       <created>1487567372980</created>
@@ -928,14 +1005,21 @@
       <option name="project" value="LOCAL" />
       <updated>1492122919992</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Made some augmentations to Event &amp; IEvent to incorporate Bridge, review code and use as example.">
+      <created>1492125821541</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1492125821541</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="25154000" />
+    <option name="totallyTimeSpent" value="27755000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1279" y="99" width="1280" height="845" extended-state="0" />
+    <frame x="-1280" y="23" width="1280" height="1001" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -951,6 +1035,7 @@
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.37821484" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32725322" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -959,8 +1044,9 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3540091" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17578125" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.09140625" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.37875536" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
@@ -968,10 +1054,8 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Analyze Dataflow to" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934928" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="10" side_tool="false" content_ui="combo" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32730016" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296875" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934928" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -996,7 +1080,8 @@
     <MESSAGE value="some spring work" />
     <MESSAGE value="Implemented Spring" />
     <MESSAGE value="Started implementing bridge" />
-    <option name="LAST_COMMIT_MESSAGE" value="Started implementing bridge" />
+    <MESSAGE value="Made some augmentations to Event &amp; IEvent to incorporate Bridge, review code and use as example." />
+    <option name="LAST_COMMIT_MESSAGE" value="Made some augmentations to Event &amp; IEvent to incorporate Bridge, review code and use as example." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1032,7 +1117,15 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1245">
           <caret line="92" column="18" lean-forward="false" selection-start-line="92" selection-start-column="18" selection-end-line="92" selection-end-column="18" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1473#1474#0" expanded="true" />
+            <element signature="e#1489#1490#0" expanded="true" />
+            <element signature="e#1922#1923#0" expanded="true" />
+            <element signature="e#1949#1950#0" expanded="true" />
+            <element signature="e#1983#1984#0" expanded="true" />
+            <element signature="e#2008#2009#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1040,7 +1133,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2190">
           <caret line="159" column="24" lean-forward="false" selection-start-line="159" selection-start-column="24" selection-end-line="159" selection-end-column="24" />
-          <folding />
+          <folding>
+            <element signature="e#1647#1648#0" expanded="true" />
+            <element signature="e#1665#1666#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1134,14 +1230,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/proj1-Facility/model/use/FacilityUse.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="45" column="36" lean-forward="false" selection-start-line="45" selection-start-column="36" selection-end-line="45" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/proj1-Facility/model/facility/Manager.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="600">
@@ -1165,14 +1253,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/proj1-Facility/model/facility/IInspection.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="43" lean-forward="false" selection-start-line="12" selection-start-column="43" selection-end-line="12" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/proj1-Facility/model/maintenance/IMaintenance.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
@@ -1182,7 +1262,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/proj1-Facility/view/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1875">
+        <state relative-caret-position="551">
           <caret line="138" column="32" lean-forward="false" selection-start-line="138" selection-start-column="32" selection-end-line="138" selection-end-column="32" />
           <folding />
         </state>
@@ -1192,7 +1272,22 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
           <caret line="9" column="32" lean-forward="false" selection-start-line="9" selection-start-column="32" selection-end-line="9" selection-end-column="32" />
-          <folding />
+          <folding>
+            <element signature="e#1063#1064#0" expanded="false" />
+            <element signature="e#1081#1082#0" expanded="false" />
+            <element signature="e#1104#1105#0" expanded="false" />
+            <element signature="e#1120#1121#0" expanded="false" />
+            <element signature="e#1277#1278#0" expanded="false" />
+            <element signature="e#1295#1296#0" expanded="false" />
+            <element signature="e#1488#1489#0" expanded="false" />
+            <element signature="e#1519#1520#0" expanded="false" />
+            <element signature="e#1744#1745#0" expanded="false" />
+            <element signature="e#1770#1771#0" expanded="false" />
+            <element signature="e#1807#1808#0" expanded="false" />
+            <element signature="e#1828#1829#0" expanded="false" />
+            <element signature="e#2333#2334#0" expanded="false" />
+            <element signature="e#2379#2380#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1204,35 +1299,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/proj1-Facility/model/maintenance/IRequest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="21" column="43" lean-forward="false" selection-start-line="21" selection-start-column="43" selection-end-line="21" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/proj1-Facility/model/maintenance/Maintenance.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
           <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/proj1-Facility/model/maintenance/Request.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="825">
-          <caret line="63" column="20" lean-forward="false" selection-start-line="63" selection-start-column="20" selection-end-line="63" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/proj1-Facility/model/facility/Inspection.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="13" lean-forward="false" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#413#414#0" expanded="false" />
+            <element signature="e#457#458#0" expanded="false" />
+            <element signature="e#501#502#0" expanded="false" />
+            <element signature="e#528#529#0" expanded="false" />
+            <element signature="e#570#571#0" expanded="false" />
+            <element signature="e#606#607#0" expanded="false" />
+            <element signature="e#6364#6372#0" expanded="false" />
+            <element signature="e#6742#6743#0" expanded="false" />
+            <element signature="e#6792#6793#0" expanded="false" />
+            <element signature="e#6830#6831#0" expanded="false" />
+            <element signature="e#6866#6867#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1244,20 +1328,71 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/proj1-Facility/model/facility/IInspection.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="46" lean-forward="false" selection-start-line="12" selection-start-column="46" selection-end-line="12" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/proj1-Facility/model/facility/Occurance.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="28" lean-forward="false" selection-start-line="16" selection-start-column="28" selection-end-line="16" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/proj1-Facility/model/facility/Inspection.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1473#1474#0" expanded="true" />
+            <element signature="e#1489#1490#0" expanded="true" />
+            <element signature="e#1922#1923#0" expanded="true" />
+            <element signature="e#1949#1950#0" expanded="true" />
+            <element signature="e#1983#1984#0" expanded="true" />
+            <element signature="e#2008#2009#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/proj1-Facility/model/use/Event.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="499">
-          <caret line="71" column="5" lean-forward="false" selection-start-line="71" selection-start-column="5" selection-end-line="71" selection-end-column="5" />
+        <state relative-caret-position="263">
+          <caret line="74" column="54" lean-forward="false" selection-start-line="74" selection-start-column="54" selection-end-line="74" selection-end-column="54" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/proj1-Facility/model/facility/Occurance.java">
+    <entry file="file://$PROJECT_DIR$/proj1-Facility/model/maintenance/IRequest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="51" lean-forward="false" selection-start-line="19" selection-start-column="51" selection-end-line="19" selection-end-column="51" />
+        <state relative-caret-position="270">
+          <caret line="19" column="17" lean-forward="false" selection-start-line="19" selection-start-column="17" selection-end-line="19" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/proj1-Facility/model/maintenance/Request.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="253">
+          <caret line="124" column="37" lean-forward="false" selection-start-line="124" selection-start-column="37" selection-end-line="124" selection-end-column="37" />
+          <folding>
+            <element signature="e#1647#1648#0" expanded="true" />
+            <element signature="e#1665#1666#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/proj1-Facility/model/use/FacilityUse.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="37" column="47" lean-forward="false" selection-start-line="37" selection-start-column="47" selection-end-line="37" selection-end-column="47" />
           <folding />
         </state>
       </provider>

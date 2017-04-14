@@ -16,10 +16,8 @@ public interface IRequest {
     public boolean setCompleted (boolean newState);
     public boolean getScheduled ();
     public boolean setScheduled (boolean newState);
-    public Calendar getDateCreated ();
-    public boolean setDateCreated (String newDate);
+    public String getDateCreated ();
     public String getDateScheduled ();
-    public boolean setDateScheduled (String scheduledDate);
     public boolean setCost(double cost);
     public boolean setEstimatedWorkedTime (double estimatedWorktime);
     public double getEstimatedWorktime();

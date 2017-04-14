@@ -1,19 +1,29 @@
 package model.facility;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class Inspection extends Occurance implements IInspection {
 	
 	private int id;
-	private String dateConducted;
+	private Date dateScheduled;
+	private Date dateCreated;
 	private String inspector;
 	private boolean completed = false;
 	private int facID;
 
 	//CONSTRUCTOR
-	public Inspection(int id, String date, String insp, boolean com, int facID) {
+	public Inspection(int id, String dateCreated, String insp, boolean com, int facID) {
 		this.id = id;
-		this.dateConducted = date;
+
+		SimpleDateFormat format = new SimpleDateFormat("yyyyMMdd");
+		try {
+			this.dateCreated = format.parse(dateCreated);
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}
+
 		this.inspector = insp;
 		this.completed = com;
 		this.facID = facID;
@@ -23,7 +33,7 @@ public class Inspection extends Occurance implements IInspection {
 	public String toString() {
 		return "Inspection{" +
 				"id=" + id +
-				", dateConducted='" + dateConducted + '\'' +
+				", dateScheduled='" + dateScheduled + '\'' +
 				", inspector='" + inspector + '\'' +
 				", completed=" + completed +
 				", facID=" + facID +
@@ -33,12 +43,13 @@ public class Inspection extends Occurance implements IInspection {
 	//DEFAULT CONSTRUCTOR
 	public Inspection() {
 		id = 0000;
-		dateConducted = null;
+		dateScheduled = null;
 	}
 
 	public int getFacID() { return facID;}
 
-	public boolean setFacID(Integer facID) {
+	@Override
+	public boolean setFacID(int facID) {
 		this.facID = facID;
 
 		if (this.facID == facID) {
@@ -54,7 +65,8 @@ public class Inspection extends Occurance implements IInspection {
 	public int getID() {
 		return id;
 	}
-	
+
+	@Override
 	public boolean setID(int newID) {
 		int temp = getID();
 		this.id = newID;
@@ -68,25 +80,12 @@ public class Inspection extends Occurance implements IInspection {
 		}
 	}
 
-	@Override
-	public boolean setFacID(int facID) {
-		return true;
+	public Date getDateScheduled () {
+		return dateScheduled;
 	}
 
-	public String getDate () {
-		return dateConducted;
-	}
-
-	public boolean setDate (String newD) {
-		this.dateConducted = newD;
-
-		if (this.dateConducted == newD) {
-			System.out.println("Date for inspection updated successfully successfully...");
-			return true;
-		} else {
-			System.out.println("Date setting for inspection was NOT successful...");
-			return false;
-		}
+	public Date getDateCreated () {
+		return dateCreated;
 	}
 	
 	public String getInspector () {
@@ -108,7 +107,8 @@ public class Inspection extends Occurance implements IInspection {
 	public boolean getCompleted () {
 		return completed;
 	}
-	
+
+	@Override
 	public boolean setCompleted (boolean newState) {
 		this.completed = newState;
 		
@@ -122,17 +122,17 @@ public class Inspection extends Occurance implements IInspection {
 	}
 
 	@Override
-	public boolean setDateCreated(Date dateCreated) {
+	public boolean setDateCreated(String dateCreated) {
 		return true;
 	}
 
 	@Override
-	public boolean setDateScheduled(Date dateScheduled) {
+	public boolean setDateScheduled(String dateScheduled) {
 		return true;
 	}
 
 	public String getInfo () {
-		return "Inspection ID: " + getID() + "\nDate conducted: " + getDate() + "\nInspector: " + getInspector() + "\nCompleted: " + getCompleted();
+		return "Inspection ID: " + getID() + "\nDate created: " + getDateCreated() + "\nDate scheduled: " + getDateScheduled() + "\nInspector: " + getInspector() + "\nCompleted: " + getCompleted();
 	}
 
 }
