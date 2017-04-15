@@ -2,6 +2,7 @@ package model.use;
 
 import model.facility.Inspection;
 import model.facility.Facility;
+import model.facility.Occurance;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -44,11 +45,16 @@ public class FacilityUse implements IFacilityUse {
         return false;
     }
 
+    @Override
+    public boolean assignFacilityToUse(String eventDate, String eventName, Integer eventID, Integer facID) {
+        return false;
+    }
+
 
 //    FIX SPRING IMPLEMENTATION
 
     @Override
-    public boolean assignFacilityToUse(String eventDate, String eventName, Integer eventID, Integer facID) {
+    public boolean assignFacilityToUse(String eventDate, String eventName, int eventID, int facID, String dateCreated, String dateScheduled) {
         Event newEvent = new Event(eventDate,eventName,eventID,facID, dateCreated, dateScheduled);
         eventList.add(newEvent);
         System.out.println("Event with ID " + newEvent.getEventID() + " has been submitted successfully...");

@@ -105,6 +105,18 @@ public class Request extends Occurance implements IRequest{
 		}
 	}
 
+	@Override
+	public boolean setDateCreated(Date dateCreated) {
+		this.dateCreated = dateCreated;
+		return true;
+	}
+
+	@Override
+	public boolean setDateScheduled(Date dateScheduled) {
+		this.dateScheduled = dateScheduled;
+		return true;
+	}
+
 	public boolean getScheduled () {
 		return scheduled;
 	}

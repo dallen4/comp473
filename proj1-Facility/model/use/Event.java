@@ -15,14 +15,25 @@ public class Event extends Occurance implements IEvent  {
     private boolean completed;
     private Date dateCreated;
     private Date dateScheduled;
+    private Date eventDate;
 
     //CONSTRUCTOR
 
-    public Event(){
-
+    public Event(String eventDate, String eventName, int eventID, int facID, String dateCreated, String dateScheduled){
+        SimpleDateFormat format = new SimpleDateFormat("yyyyMMdd");
+        try {
+            this.dateCreated = format.parse(dateCreated);
+            this.dateScheduled = format.parse(dateScheduled);
+            this.eventDate = format.parse(eventDate);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        eventID = eventID;
+        this.eventName = eventName;
+        this.facID = facID;
     }
 
-    public Event(String eventName, int ID, Integer facID, String dateCreated, String dateScheduled) {
+    public Event(String eventName, int ID, int facID, String dateCreated, String dateScheduled) {
         SimpleDateFormat format = new SimpleDateFormat("yyyyMMdd");
         try {
             this.dateCreated = format.parse(dateCreated);
@@ -69,6 +80,16 @@ public class Event extends Occurance implements IEvent  {
             return true;
         else
             return false;
+    }
+
+    @Override
+    public boolean setDateCreated(Date dateCreated) {
+        return false;
+    }
+
+    @Override
+    public boolean setDateScheduled(Date dateScheduled) {
+        return false;
     }
 
     @Override
@@ -126,4 +147,14 @@ public class Event extends Occurance implements IEvent  {
         else
             return false;
     }
+
+    public Date getEventDate() {
+        return dateScheduled;
+    }
+
+    public int getEventID() {
+        return ID;
+    }
+
+
 }
