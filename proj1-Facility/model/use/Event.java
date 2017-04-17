@@ -47,7 +47,11 @@ public class Event extends Occurance implements IEvent  {
                 '}';
     }
 
-    public Integer getFacID() { return facID;}
+    public int getID() {
+        return ID;
+    }
+
+    public int getFacID() { return facID;}
 
     public String getEventInfo() {
         return "Event ID: " + ID + "\nCreated Date: " + dateCreated + "\nScheduled Date: " + dateScheduled +
@@ -105,6 +109,10 @@ public class Event extends Occurance implements IEvent  {
             return true;
         else
             return false;
+    }
+
+    public Date getDateScheduled () {
+        return dateScheduled;
     }
 
     @Override

@@ -18,6 +18,8 @@ public interface IRequest {
     public boolean setScheduled (boolean newState);
     public String getDateCreated ();
     public String getDateScheduled ();
+    public boolean setDateCreated(String date);
+    public boolean setDateScheduled(String date);
     public boolean setCost(double cost);
     public boolean setEstimatedWorkedTime (double estimatedWorktime);
     public double getEstimatedWorktime();

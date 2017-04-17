@@ -9,7 +9,7 @@ public interface IFacilityUse {
 	
 	//REQUIRED METHODS
 	public boolean isInUseDuringInterval(Integer facID, String eventDate);
-	public boolean assignFacilityToUse(String eventDate, String eventName, Integer eventID,Integer facID);
+	public boolean assignFacilityToUse(String dateScheduled, String dateCreated, String eventName, Integer eventID,Integer facID);
 	public boolean vacateFacility(Facility f);
 	public List<Inspection> listInspections(Integer facID);
 	public List<Event>  listActualUsage(Integer facID);

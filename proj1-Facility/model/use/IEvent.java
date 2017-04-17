@@ -11,5 +11,9 @@ public interface IEvent {
 
     public String getEventInfo();
     public void setEventName(String eventName);
+    public boolean setDateCreated(String date);
+    public boolean setDateScheduled(String date);
+    public boolean setID(int id);
+    public boolean setFacID (int id);
 
 }

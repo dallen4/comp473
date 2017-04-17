@@ -35,7 +35,7 @@ public class FacilityUse implements IFacilityUse {
             e.printStackTrace();
         }
         for (int i=0; i<eventList.size(); i++){
-            if (date.compareTo(eventList.get(i).getEventDate()) == 0  && eventList.get(i).getFacID() == facID){
+            if (date.compareTo(eventList.get(i).getDateScheduled()) == 0  && eventList.get(i).getFacID() == facID){
                 System.out.println("This date is already booked.");
                 return true;
             }
@@ -48,10 +48,10 @@ public class FacilityUse implements IFacilityUse {
 //    FIX SPRING IMPLEMENTATION
 
     @Override
-    public boolean assignFacilityToUse(String eventDate, String eventName, Integer eventID, Integer facID) {
-        Event newEvent = new Event(eventDate,eventName,eventID,facID, dateCreated, dateScheduled);
+    public boolean assignFacilityToUse(String dateScheduled, String dateCreated, String eventName, Integer eventID, Integer facID) {
+        Event newEvent = new Event(eventName,eventID,facID, dateCreated, dateScheduled);
         eventList.add(newEvent);
-        System.out.println("Event with ID " + newEvent.getEventID() + " has been submitted successfully...");
+        System.out.println("Event with ID " + newEvent.getID() + " has been submitted successfully...");
         return true;
     }
 

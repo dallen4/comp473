@@ -104,8 +104,8 @@ public class Main {
 
 		IEvent event1 = (IEvent) context.getBean("event");
 		event1.setFacID(0);
-		event1.setEventID(0);
-		event1.setEventDate("20170408");
+		event1.setID(0);
+		event1.setDateScheduled("20170408");
 		event1.setEventName("Big Party");
 
 		System.out.println("Adding event 1 to the event list...\n");
@@ -114,8 +114,8 @@ public class Main {
 
 		IEvent event2 = (IEvent) context.getBean("event");
 		event2.setFacID(1);
-		event2.setEventID(1);
-		event2.setEventDate("20170610");
+		event2.setID(1);
+		event2.setDateScheduled("20170610");
 		event2.setEventName("Engagement Party");
 
 		System.out.println("Adding event 2 to the event list...\n");
@@ -131,14 +131,14 @@ public class Main {
 		inspection1.setID(0);
 		inspection1.setFacID(1);
 		inspection1.setCompleted(false);
-		inspection1.setDate("20170804");
+		inspection1.setDateScheduled("20170804");
 		inspection1.setInspector("Inspector Gadget");
 
 		IInspection inspection2 = (IInspection) context.getBean("inspection");
 		inspection2.setID(1);
 		inspection2.setFacID(2);
 		inspection2.setCompleted(true);
-		inspection2.setDate("20170809");
+		inspection2.setDateScheduled("20170809");
 		inspection2.setInspector("Inspector Man");
 
 		facilityUse.getFacilityUse().getInspections().add(inspection1);

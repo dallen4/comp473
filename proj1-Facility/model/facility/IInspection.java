@@ -13,5 +13,9 @@ public interface IInspection {
     public boolean setInspector (String insp);
     public String getInfo ();
     public String toString();
+    public boolean setDateCreated(String date);
+    public boolean setDateScheduled(String date);
+    public boolean setFacID (int id);
+    public boolean setCompleted (boolean status);
 
 }

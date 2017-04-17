@@ -38,6 +38,13 @@ public class Request extends Occurance implements IRequest{
 		}
 
 	}
+
+	public Request(int facID, int reqID, String description) {
+		this.facID = facID;
+		this.id = reqID;
+		this.description = description;
+
+	}
 	
 	// DEFAULT CONSTRUCTOR
 	public Request() {
