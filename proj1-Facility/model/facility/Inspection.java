@@ -122,6 +122,16 @@ public class Inspection extends Occurance implements IInspection {
 	}
 
 	@Override
+	public boolean setDateCreated(Date dateCreated) {
+		return false;
+	}
+
+	@Override
+	public boolean setDateScheduled(Date dateScheduled) {
+		return false;
+	}
+
+	@Override
 	public boolean setDateCreated(String dateCreated) {
 		return true;
 	}
