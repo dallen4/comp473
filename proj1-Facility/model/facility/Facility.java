@@ -1,16 +1,17 @@
 package model.facility;
 
-
 import java.util.List;
+import java.beans.PropertyChangeEvent;
+import java.beans.PropertyChangeListener;
+import java.util.ArrayList;
 
 public class Facility implements IFacility {
-	
+
 	private int id;
 	private String name;
 	private int currCapacity = 0;
 	private int potentialCapacity;
 	private List<String> Details;
-
 
 	@Override
 	public String toString() {
@@ -46,8 +47,9 @@ public class Facility implements IFacility {
 	public Facility() {
 		// TODO Auto-generated constructor stub
 	}
-	
-	
+
+
+
 	//GETTERS & SETTERS
 
 	public Facility getFacility() {
@@ -60,13 +62,14 @@ public class Facility implements IFacility {
 	
 	public boolean setID (int id) {
 		this.id = id;
-		
 		if (this.id == id) {
 			return true;
 		} else {
 			return false;
 		}
 	}
+
+
 	
 	public String getName() {
 		return name;

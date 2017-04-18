@@ -1,12 +1,10 @@
 package view;
 
-import model.facility.Facility;
-import model.facility.IFacility;
-import model.facility.IInspection;
-import model.facility.Manager;
+import model.facility.*;
 import model.maintenance.IMaintenance;
 import model.maintenance.IRequest;
 import model.maintenance.Request;
+import model.use.Event;
 import model.use.IEvent;
 import model.use.IFacilityUse;
 import org.springframework.context.ApplicationContext;
@@ -22,13 +20,18 @@ public class Main {
 		ApplicationContext context;
 		context = new ClassPathXmlApplicationContext("app-context.xml");
 
+		ISubject subject = new Subject();
+
 		System.out.println("******  Starting Facility Management System  ******");
 
 		System.out.println("Creating Manager object...");
 
 		Manager manager = (Manager)context.getBean("manager");
 
+
 		List<Facility> facilityList = manager.getFacilities();
+
+
 
 		IFacility facility1 = (IFacility) context.getBean("facility");
 		facility1.setID(1);
@@ -128,6 +131,28 @@ public class Main {
 		// Inspection Tests
 
 		IInspection inspection1 = (IInspection) context.getBean("inspection");
+
+
+		IInspection inspection3 = new Inspection((Subject)subject);
+		inspection3.setFacID(3);
+		subject.setState(2);
+		System.out.println("%%%%%%%%%%%%%%%%%" + inspection3.toString());
+
+		IEvent event3 = new Event((Subject)subject);
+		event3.setFacID(10);
+		subject.setState(9);
+		System.out.println("%%%%%%%%%%%%%%%%%" + event3.toString());
+		System.out.println("%%%%%%%%%%%%%%%%%" + inspection3.toString());
+
+		IRequest req3 = new Request((Subject)subject);
+		req3.setFacID(11);
+		System.out.println("%%%%%%%%%%%%%%%%%" + req3.toString());
+		subject.setState(12);
+		System.out.println("%%%%%%%%%%%%%%%%%" + req3.toString());
+		System.out.println("%%%%%%%%%%%%%%%%%" + event3.toString());
+		System.out.println("%%%%%%%%%%%%%%%%%" + inspection3.toString());
+
+
 		inspection1.setID(0);
 		inspection1.setFacID(1);
 		inspection1.setCompleted(false);

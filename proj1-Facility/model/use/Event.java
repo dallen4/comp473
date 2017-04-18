@@ -1,13 +1,15 @@
 package model.use;
 
+import model.facility.Observer;
 import model.facility.Occurance;
+import model.facility.*;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
 
-public class Event extends Occurance implements IEvent  {
+public class Event extends Occurance implements IEvent, Observer {
 
     private String eventName;
     private int ID;
@@ -16,6 +18,8 @@ public class Event extends Occurance implements IEvent  {
     private Date dateCreated;
     private Date dateScheduled;
     private Date eventDate;
+
+    private Subject facGrabber;
 
     //CONSTRUCTOR
 
@@ -33,6 +37,11 @@ public class Event extends Occurance implements IEvent  {
         this.facID = facID;
     }
 
+    public Event (Subject facGrabber) {
+        this.facGrabber = facGrabber;
+        this.facGrabber.attach(this);
+    }
+
     public Event(String eventName, int ID, int facID, String dateCreated, String dateScheduled) {
         SimpleDateFormat format = new SimpleDateFormat("yyyyMMdd");
         try {
@@ -44,6 +53,9 @@ public class Event extends Occurance implements IEvent  {
         this.ID = ID;
         this.eventName = eventName;
         this.facID = facID;
+    }
+
+    public Event() {
     }
 
     @Override
@@ -165,4 +177,8 @@ public class Event extends Occurance implements IEvent  {
     }
 
 
+    @Override
+    public void update(int newFacID) {
+        this.facID = newFacID;
+    }
 }

@@ -106,7 +106,10 @@ public class FacilityUse implements IFacilityUse {
         return usageRate;
     }
 
-
+    @Override
+    public boolean assignFacilityToUse(String eventDate, String eventName, int eventID, int facID, String dateCreated, String dateScheduled) {
+        return false;
+    }
 
 
     public Integer getCurrCapacity() {

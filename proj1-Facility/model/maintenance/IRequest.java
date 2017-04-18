@@ -10,6 +10,8 @@ public interface IRequest {
 
     public int getID();
     public boolean setID (int newID);
+    public int getFacID();
+    public boolean setFacID (int newID);
     public String getDesc ();
     public boolean setDesc (String newDesc);
     public boolean getCompleted ();

@@ -4,10 +4,11 @@ import model.facility.Occurance;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Calendar;
 import java.util.Date;
+import model.facility.Observer;
+import model.facility.*;
 
-public class Request extends Occurance implements IRequest{
+public class Request extends Occurance implements IRequest, Observer {
 	
 	private int id;
 	private int facID;
@@ -18,6 +19,7 @@ public class Request extends Occurance implements IRequest{
 	private Date dateScheduled;
 	private double cost = 20.0;
 	private double estimatedWorktime;
+	private Subject subject;
 
 	//NEED TO IMPLEMENT COST CALCULATION
 
@@ -36,7 +38,11 @@ public class Request extends Occurance implements IRequest{
 		} catch (ParseException e) {
 			e.printStackTrace();
 		}
+	}
 
+	public Request(Subject subject) {
+		this.subject = subject;
+		subject.attach(this);
 	}
 
 	public Request(int facID, int reqID, String description) {
@@ -77,7 +83,12 @@ public class Request extends Occurance implements IRequest{
 
 	@Override
 	public boolean setFacID(int facID) {
-		return true;
+		this.facID = facID;
+		if (this.facID == facID) {
+			return true;
+		} else {
+			return false;
+		}
 	}
 
 	public String getDesc () {
@@ -224,6 +235,11 @@ public class Request extends Occurance implements IRequest{
 	
 	@Override
 	public String toString() {
-		return "ID: " + getID() + "\nDescription: " + getDesc() + "\nComplete: " + getCompleted() + "\nScheduled for: " + getDateScheduled() + "\nThe maintenance cost is: " + getCost() + "$";
+		return "ID: " + getID() + "\nDescription: " + getDesc() + "\nComplete: " + getCompleted() + "\nScheduled for: " + getDateScheduled() + "\nThe maintenance cost is: " + getCost() + "$" + "\nFac ID: " + facID;
+	}
+
+	@Override
+	public void update(int newFacID) {
+		this.facID = newFacID;
 	}
 }

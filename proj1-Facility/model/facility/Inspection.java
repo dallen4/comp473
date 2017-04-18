@@ -4,7 +4,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class Inspection extends Occurance implements IInspection {
+public class Inspection extends Occurance implements IInspection, Observer {
 	
 	private int id;
 	private Date dateScheduled;
@@ -12,6 +12,7 @@ public class Inspection extends Occurance implements IInspection {
 	private String inspector;
 	private boolean completed = false;
 	private int facID;
+	private Subject subject;
 
 	//CONSTRUCTOR
 	public Inspection(int id, String dateCreated, String insp, boolean com, int facID) {
@@ -27,6 +28,11 @@ public class Inspection extends Occurance implements IInspection {
 		this.inspector = insp;
 		this.completed = com;
 		this.facID = facID;
+	}
+
+	public Inspection (Subject s) {
+		this.subject = s;
+		subject.attach(this);
 	}
 
 	@Override
@@ -59,6 +65,7 @@ public class Inspection extends Occurance implements IInspection {
 			System.out.println("Facility ID for Inspection " + getID() + " was NOT updated successfully...");
 			return false;
 		}
+
 	}
 
 	//GETTERS & SETTERS
@@ -78,6 +85,7 @@ public class Inspection extends Occurance implements IInspection {
 			System.out.println("ID modification for Inspection " + getID() + " was NOT successful...");
 			return false;
 		}
+
 	}
 
 	public Date getDateScheduled () {
@@ -145,4 +153,8 @@ public class Inspection extends Occurance implements IInspection {
 		return "Inspection ID: " + getID() + "\nDate created: " + getDateCreated() + "\nDate scheduled: " + getDateScheduled() + "\nInspector: " + getInspector() + "\nCompleted: " + getCompleted();
 	}
 
+	@Override
+	public void update(int newFacID) {
+		this.facID = newFacID;
+	}
 }
