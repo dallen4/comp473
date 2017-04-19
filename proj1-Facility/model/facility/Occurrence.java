@@ -4,13 +4,7 @@ import java.util.Date;
 /**
  * Created by lanzer on 4/13/17.
  */
-public abstract class Occurance {
-    private int ID;
-    private int facID;
-    private boolean completed;
-    private Date dateCreated;
-    private Date dateScheduled;
-
+public abstract class Occurrence {
 
     public abstract boolean setCompleted(boolean completed);
 
@@ -23,8 +17,5 @@ public abstract class Occurance {
     public abstract boolean setDateScheduled(String dateScheduled);
 
     public abstract boolean setID(int ID);
-
-    public abstract boolean setFacID(int facID);
-
 
 }

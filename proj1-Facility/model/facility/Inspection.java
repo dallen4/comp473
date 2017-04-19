@@ -4,7 +4,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class Inspection extends Occurance implements IInspection, Observer {
+public class Inspection extends Occurrence implements IInspection, Observer {
 	
 	private int id;
 	private Date dateScheduled;

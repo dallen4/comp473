@@ -1,6 +1,6 @@
 package model.maintenance;
 
-import model.facility.Occurance;
+import model.facility.Occurrence;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -8,7 +8,7 @@ import java.util.Date;
 import model.facility.Observer;
 import model.facility.*;
 
-public class Request extends Occurance implements IRequest, Observer {
+public class Request extends Occurrence implements IRequest, Observer {
 	
 	private int id;
 	private int facID;

@@ -1,7 +1,7 @@
 package model.use;
 
 import model.facility.Observer;
-import model.facility.Occurance;
+import model.facility.Occurrence;
 import model.facility.*;
 
 import java.text.ParseException;
@@ -9,7 +9,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 
-public class Event extends Occurance implements IEvent, Observer {
+public class Event extends Occurrence implements IEvent, Observer {
 
     private String eventName;
     private int ID;
