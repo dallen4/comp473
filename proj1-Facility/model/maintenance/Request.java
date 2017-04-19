@@ -239,7 +239,11 @@ public class Request extends Occurance implements IRequest, Observer {
 	}
 
 	@Override
-	public void update(int newFacID) {
-		this.facID = newFacID;
+	public void update(int oldFacID, int newFacID) {
+		if (this.facID == oldFacID) {
+			this.facID = newFacID;
+		} else {
+			return;
+		}
 	}
 }

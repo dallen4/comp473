@@ -168,17 +168,12 @@ public class Event extends Occurance implements IEvent, Observer {
             return false;
     }
 
-    public Date getEventDate() {
-        return dateScheduled;
-    }
-
-    public int getEventID() {
-        return ID;
-    }
-
-
     @Override
-    public void update(int newFacID) {
-        this.facID = newFacID;
+    public void update(int oldFacID, int newFacID) {
+        if (this.facID == oldFacID) {
+            this.facID = newFacID;
+        } else {
+            return;
+        }
     }
 }

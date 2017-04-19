@@ -135,19 +135,19 @@ public class Main {
 
 		IInspection inspection3 = new Inspection((Subject)subject);
 		inspection3.setFacID(3);
-		subject.setState(2);
+		subject.setState(inspection3.getFacID(), 2);
 		System.out.println("%%%%%%%%%%%%%%%%%" + inspection3.toString());
 
 		IEvent event3 = new Event((Subject)subject);
 		event3.setFacID(10);
-		subject.setState(9);
+		subject.setState(event3.getFacID(), 9);
 		System.out.println("%%%%%%%%%%%%%%%%%" + event3.toString());
 		System.out.println("%%%%%%%%%%%%%%%%%" + inspection3.toString());
 
 		IRequest req3 = new Request((Subject)subject);
 		req3.setFacID(11);
 		System.out.println("%%%%%%%%%%%%%%%%%" + req3.toString());
-		subject.setState(12);
+		subject.setState(req3.getFacID(),12);
 		System.out.println("%%%%%%%%%%%%%%%%%" + req3.toString());
 		System.out.println("%%%%%%%%%%%%%%%%%" + event3.toString());
 		System.out.println("%%%%%%%%%%%%%%%%%" + inspection3.toString());

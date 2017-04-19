@@ -11,7 +11,7 @@ public interface ISubject {
 
     public int getState();
 
-    public void setState(int state);
+    public void setState(int state, int newState);
 
     public void attach(Observer observer);
 

@@ -15,5 +15,6 @@ public interface IEvent {
     public boolean setDateScheduled(String date);
     public boolean setID(int id);
     public boolean setFacID (int id);
+    public int getFacID();
 
 }

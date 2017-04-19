@@ -9,13 +9,15 @@ import java.util.List;
 public class Subject implements ISubject {
 
     private List<Observer> observers = new ArrayList<Observer>();
+    private int newFacID;
     private int facID;
 
     public int getState() {
         return facID;
     }
 
-    public void setState(int state) {
+    public void setState(int state, int newState) {
+        this.newFacID = newState;
         this.facID = state;
         notifyAllObservers();
     }
@@ -26,7 +28,7 @@ public class Subject implements ISubject {
 
     public void notifyAllObservers(){
         for (Observer observer : observers) {
-            observer.update(facID);
+            observer.update(facID, newFacID);
         }
     }
 }

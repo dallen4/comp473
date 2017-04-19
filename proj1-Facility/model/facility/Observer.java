@@ -7,6 +7,6 @@ import java.util.ArrayList;
  */
 public interface Observer {
 
-    public void update(int newFacID);
+    public void update(int oldFacID, int newFacID);
 
 }
