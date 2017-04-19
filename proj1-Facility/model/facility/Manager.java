@@ -22,21 +22,6 @@ public class Manager {
 		// TODO Auto-generated constructor stub
 	}
 
-	public void update(int oldFacID, int newFacID) {
-		for (int i = 0; i < facMaint.getMaintRequests().size(); i++) {
-			Request r = (Request) facMaint.getMaintRequests().get(i);
-			if (r.getFacID() == oldFacID) {
-				((Request) facMaint.getMaintRequests().get(i)).setFacID(newFacID);
-			}
-		}
-		for (int i = 0; i < facilityUse.getEventList().size(); i++) {
-			Event e = (Event) facilityUse.getEventList().get(i);
-			if (e.getFacID() == oldFacID) {
-				((Event) facilityUse.getEventList().get(i)).setFacID(newFacID);
-			}
-		}
-	}
-
 
 	@Override
 	public String toString() {
@@ -57,18 +42,6 @@ public class Manager {
 	//REQUIRED METHOD
 	public boolean removeFacility (Facility delFacility) {
 		return Facilities.remove(delFacility);
-	}
-
-	public boolean changeFacilityID (int oldID, int newID) {
-		for (int i = 0; i < Facilities.size(); i++) {
-			if (Facilities.get(i).getFacility().getID() == oldID) {
-				Facilities.get(i).getFacility().setID(newID);
-				update(oldID, newID);
-				return true;
-			} else
-				return false;
-		}
-		return false;
 	}
 	
 	//REQUIRED METHOD
