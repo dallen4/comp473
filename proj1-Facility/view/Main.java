@@ -31,7 +31,9 @@ public class Main {
 
 		List<Facility> facilityList = manager.getFacilities();
 
-
+		System.out.println("");
+		System.out.println("***** Creating Facilities *****");
+		System.out.println("");
 
 		IFacility facility1 = (IFacility) context.getBean("facility");
 		facility1.setID(1);
@@ -68,6 +70,11 @@ public class Main {
 		System.out.println("\n\nBuilding Facility Maintenance objects...");
 
 		//Instantiating Maintenance
+
+		System.out.println("");
+		System.out.println("***** Implementing Maintenance and Request *****");
+		System.out.println("");
+
 		IMaintenance maintenance = (IMaintenance) context.getBean("maintenance");
 
 		IRequest request1 = (IRequest) context.getBean("request");
@@ -103,6 +110,11 @@ public class Main {
 
 
 		//Instantiating FacilityUse
+
+		System.out.println("");
+		System.out.println("***** Implementing facilityUse and Event *****");
+		System.out.println("");
+
 		IFacilityUse facilityUse = (IFacilityUse) context.getBean("facilityUse");
 
 		IEvent event1 = (IEvent) context.getBean("event");
@@ -128,31 +140,13 @@ public class Main {
 		System.out.println(facilityUse.getFacilityUse().getEventList().get(1).toString());
 		System.out.println(facilityUse.getFacilityUse().getEventList().get(2).toString());
 
-		// Inspection Tests
+		// Initiating normal implementation of inspection
+
+		System.out.println("");
+		System.out.println("***** Implementing Inspection *****");
+		System.out.println("");
 
 		IInspection inspection1 = (IInspection) context.getBean("inspection");
-
-
-		IInspection inspection3 = new Inspection((Subject)subject);
-		inspection3.setFacID(3);
-		subject.setState(inspection3.getFacID(), 2);
-		System.out.println("%%%%%%%%%%%%%%%%%" + inspection3.toString());
-
-		IEvent event3 = new Event((Subject)subject);
-		event3.setFacID(10);
-		subject.setState(event3.getFacID(), 9);
-		System.out.println("%%%%%%%%%%%%%%%%%" + event3.toString());
-		System.out.println("%%%%%%%%%%%%%%%%%" + inspection3.toString());
-
-		IRequest req3 = new Request((Subject)subject);
-		req3.setFacID(11);
-		System.out.println("%%%%%%%%%%%%%%%%%" + req3.toString());
-		subject.setState(req3.getFacID(),12);
-		System.out.println("%%%%%%%%%%%%%%%%%" + req3.toString());
-		System.out.println("%%%%%%%%%%%%%%%%%" + event3.toString());
-		System.out.println("%%%%%%%%%%%%%%%%%" + inspection3.toString());
-
-
 		inspection1.setID(0);
 		inspection1.setFacID(1);
 		inspection1.setCompleted(false);
@@ -172,6 +166,72 @@ public class Main {
 		System.out.println(facilityUse.getFacilityUse().getInspections().get(1).toString());
 		System.out.println(facilityUse.getFacilityUse().getInspections().get(2).toString());
 
+
+
+		// Observer Tests
+		System.out.println("");
+		System.out.println("***** Starting Observer Tests *****");
+		System.out.println("");
+
+		IInspection inspection4 = new Inspection((Subject)subject);
+		IInspection inspection5 = new Inspection((Subject)subject);
+		IInspection inspection6 = new Inspection((Subject)subject);
+		inspection4.setFacID(1);
+		inspection5.setFacID(2);
+		inspection6.setFacID(3);
+		System.out.println("inspection 4" + inspection4.toString());
+		System.out.println("inspection 5" + inspection5.toString());
+		System.out.println("inspection 6" + inspection6.toString());
+		subject.setState(inspection4.getFacID(), 4);
+		subject.setState(inspection5.getFacID(), 5);
+		subject.setState(inspection6.getFacID(), 6);
+		System.out.println("inspection 4" + inspection4.toString());
+		System.out.println("inspection 5" + inspection5.toString());
+		System.out.println("inspection 6" + inspection6.toString());
+
+
+		IEvent event4 = new Event((Subject)subject);
+		IEvent event5 = new Event((Subject)subject);
+		IEvent event6 = new Event((Subject)subject);
+		event4.setFacID(7);
+		event5.setFacID(8);
+		event6.setFacID(9);
+		System.out.println("event 4" + event4.toString());
+		System.out.println("event 5" + event5.toString());
+		System.out.println("event 6" + event6.toString());
+		subject.setState(event4.getFacID(), 10);
+		subject.setState(event5.getFacID(), 11);
+		subject.setState(event6.getFacID(), 12);
+		System.out.println("event 4" + event4.toString());
+		System.out.println("event 5" + event5.toString());
+		System.out.println("event 6" + event6.toString());
+
+		IRequest request4 = new Request((Subject)subject);
+		IEvent request5 = new Event((Subject)subject);
+		IEvent request6 = new Event((Subject)subject);
+		request4.setFacID(13);
+		request5.setFacID(14);
+		request6.setFacID(15);
+		System.out.println("request 4 " + request4.toString());
+		System.out.println("request 5 " + request5.toString());
+		System.out.println("request 6 " + request6.toString());
+		subject.setState(request4.getFacID(), 16);
+		subject.setState(request5.getFacID(), 17);
+		subject.setState(request6.getFacID(), 18);
+		System.out.println("request 4 " + request4.toString());
+		System.out.println("request 5 " + request5.toString());
+		System.out.println("request 6 " + request6.toString());
+
+
+		System.out.println("To confirm our inspections are still uneffected by later changes these should be 4,5,6 : ");
+
+		System.out.println("inspection 4" + inspection4.toString());
+		System.out.println("inspection 5" + inspection5.toString());
+		System.out.println("inspection 6" + inspection6.toString());
+
+
+		System.out.println("");
+		System.out.println("***** End of Obeserver Tests  *****");
 
 	}
 
