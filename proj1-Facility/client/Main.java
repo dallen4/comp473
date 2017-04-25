@@ -171,13 +171,11 @@ public class Main {
 
 
 		// Observer Tests
-		System.out.println("");
-		System.out.println("***** Starting Observer Tests *****");
-		System.out.println("");
+		System.out.println("\n***** Starting Observer & Bridge Tests *****\nCreating Inspections objects via Occurrence superclass...");
 
 		Occurrence inspection4 = new Inspection((Subject)subject);
-		IInspection inspection5 = new Inspection((Subject)subject);
-		IInspection inspection6 = new Inspection((Subject)subject);
+		Occurrence inspection5 = new Inspection((Subject)subject);
+		Occurrence inspection6 = new Inspection((Subject)subject);
 		inspection4.setFacID(1);
 		inspection5.setFacID(2);
 		inspection6.setFacID(3);
@@ -191,10 +189,11 @@ public class Main {
 		System.out.println("inspection 5" + inspection5.toString());
 		System.out.println("inspection 6" + inspection6.toString());
 
+		System.out.println("Creating Events objects via Occurrence superclass...");
 
-		IEvent event4 = new Event((Subject)subject);
-		IEvent event5 = new Event((Subject)subject);
-		IEvent event6 = new Event((Subject)subject);
+		Occurrence event4 = new Event((Subject)subject);
+		Occurrence event5 = new Event((Subject)subject);
+		Occurrence event6 = new Event((Subject)subject);
 		event4.setFacID(7);
 		event5.setFacID(8);
 		event6.setFacID(9);
@@ -208,9 +207,11 @@ public class Main {
 		System.out.println("event 5" + event5.toString());
 		System.out.println("event 6" + event6.toString());
 
-		IRequest request4 = new Request((Subject)subject);
-		IEvent request5 = new Event((Subject)subject);
-		IEvent request6 = new Event((Subject)subject);
+		System.out.println("Creating Requests objects via Occurrence superclass...");
+
+		Occurrence request4 = new Request((Subject)subject);
+		Occurrence request5 = new Event((Subject)subject);
+		Occurrence request6 = new Event((Subject)subject);
 		request4.setFacID(13);
 		request5.setFacID(14);
 		request6.setFacID(15);
@@ -232,8 +233,7 @@ public class Main {
 		System.out.println("inspection 6" + inspection6.toString());
 
 
-		System.out.println("");
-		System.out.println("***** End of Obeserver Tests  *****");
+		System.out.println("\n\n***** End of Observer & Bridge Tests  *****");
 
 		System.out.println("Total facility usage: " + manager.getManager().calculateFacilityUsage());
 
