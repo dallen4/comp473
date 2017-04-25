@@ -22,7 +22,9 @@ public class Main {
 
 		System.out.println("******  Starting Facility Management System  ******");
 
-		System.out.println("Creating Manager object...");
+		System.out.println("Creating Manager object...\n\n");
+
+		System.out.println("Implementing & Testing Facade via Manager class...\n");
 
 		ManagerFacade manager = (ManagerFacade) context.getBean("manager");
 
@@ -233,7 +235,7 @@ public class Main {
 		System.out.println("inspection 6" + inspection6.toString());
 
 
-		System.out.println("\n\n***** End of Observer & Bridge Tests  *****");
+		System.out.println("\n\n***** End of Observer & Bridge Tests  *****\n\nCalculating total usage for Facility via Visitor pattern...\n");
 
 		System.out.println("Total facility usage: " + manager.getManager().calculateFacilityUsage());
 
