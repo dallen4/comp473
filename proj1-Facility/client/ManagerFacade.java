@@ -1,15 +1,11 @@
 package client;
 
-import model.UsageVisitor;
-import model.Visitable;
 import model.facility.Facility;
 import model.maintenance.IMaintenance;
 import model.maintenance.Maintenance;
 import model.use.IFacilityUse;
 
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Vector;
 
 /**
  * Created by dominiqueallen on 4/24/17.
