@@ -1,5 +1,6 @@
 package model.use;
 
+import model.Visitor;
 import model.facility.Observer;
 import model.facility.Occurrence;
 import model.facility.*;
@@ -17,24 +18,25 @@ public class Event extends Occurrence implements IEvent, Observer {
     private boolean completed;
     private Date dateCreated;
     private Date dateScheduled;
-    private Date eventDate;
+    private double estimatedDuration;
 
     private Subject facGrabber;
 
     //CONSTRUCTOR
 
-    public Event(String eventDate, String eventName, int eventID, int facID, String dateCreated, String dateScheduled){
+    public Event(String eventDate, String eventName, int eventID, int facID, String dateCreated, String dateScheduled, double time){
         SimpleDateFormat format = new SimpleDateFormat("yyyyMMdd");
         try {
             this.dateCreated = format.parse(dateCreated);
             this.dateScheduled = format.parse(dateScheduled);
-            this.eventDate = format.parse(eventDate);
         } catch (ParseException e) {
             e.printStackTrace();
         }
-        eventID = eventID;
+        this.ID = eventID;
         this.eventName = eventName;
         this.facID = facID;
+        completed = false;
+        this.estimatedDuration = time;
     }
 
     public Event (Subject facGrabber) {
@@ -175,5 +177,18 @@ public class Event extends Occurrence implements IEvent, Observer {
         } else {
             return;
         }
+    }
+
+    @Override
+    public void accept(Visitor visitor) {
+        visitor.visit(this);
+    }
+
+    public double getEstimatedDuration() {
+        return estimatedDuration;
+    }
+
+    public void setEstimatedDuration(double estimatedDuration) {
+        this.estimatedDuration = estimatedDuration;
     }
 }

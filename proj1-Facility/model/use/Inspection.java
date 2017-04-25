@@ -1,4 +1,10 @@
-package model.facility;
+package model.use;
+
+import model.Visitor;
+import model.facility.Observer;
+import model.facility.Occurrence;
+import model.facility.Subject;
+import model.use.IInspection;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -12,10 +18,11 @@ public class Inspection extends Occurrence implements IInspection, Observer {
 	private String inspector;
 	private boolean completed = false;
 	private int facID;
+	private double estimatedInspectionTime;
 	private Subject subject;
 
 	//CONSTRUCTOR
-	public Inspection(int id, String dateCreated, String insp, boolean com, int facID) {
+	public Inspection(int id, String dateCreated, String insp, boolean com, int facID, double time) {
 		this.id = id;
 
 		SimpleDateFormat format = new SimpleDateFormat("yyyyMMdd");
@@ -28,6 +35,7 @@ public class Inspection extends Occurrence implements IInspection, Observer {
 		this.inspector = insp;
 		this.completed = com;
 		this.facID = facID;
+		this.estimatedInspectionTime = time;
 	}
 
 	public Inspection (Subject s) {
@@ -160,5 +168,18 @@ public class Inspection extends Occurrence implements IInspection, Observer {
 		} else {
 			return;
 		}
+	}
+
+	@Override
+	public void accept(Visitor visitor) {
+		visitor.visit(this);
+	}
+
+	public double getEstimatedInspectionTime() {
+		return estimatedInspectionTime;
+	}
+
+	public void setEstimatedInspectionTime(double estimatedInspectionTime) {
+		this.estimatedInspectionTime = estimatedInspectionTime;
 	}
 }

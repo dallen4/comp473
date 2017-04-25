@@ -1,25 +1,31 @@
-package model.facility;
+package client;
 
+import model.UsageVisitor;
+import model.Visitable;
+import model.facility.Facility;
+import model.facility.IFacility;
 import model.maintenance.IMaintenance;
 import model.maintenance.Maintenance;
-import model.use.FacilityUse;
 import model.use.IFacilityUse;
-import model.use.Event;
-import model.maintenance.Request;
 
+
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Vector;
 
-public class Manager {
+public class Manager implements ManagerFacade {
 	
 	private List<IFacility> Facilities;
 	private IFacilityUse FacUse;
 	private IMaintenance FacMaint;
-	private Maintenance facMaint;
-	private FacilityUse facilityUse;
+//	private Maintenance facMaint;
 
 	public Manager() {
 		// TODO Auto-generated constructor stub
+	}
+
+	public Manager getManager() {
+		return this;
 	}
 
 
@@ -29,8 +35,6 @@ public class Manager {
 				"Facilities=" + Facilities +
 				", FacUse=" + FacUse +
 				", FacMaint=" + FacMaint +
-				", facMaint=" + facMaint +
-				", facilityUse=" + facilityUse +
 				'}';
 	}
 
@@ -87,20 +91,22 @@ public class Manager {
 		return Facilities;
 	}
 
-	public void setFacMaint(Maintenance facMaint) {
-		this.facMaint = facMaint;
-	}
+	public double calculateFacilityUsage() {
 
-	public Maintenance getFacMaint() {
-		return facMaint;
-	}
+		UsageVisitor visitor = new UsageVisitor();
 
-	public void setFacilityUse(FacilityUse facilityUse) {
-		this.facilityUse = facilityUse;
-	}
+		ArrayList<Visitable> items = new ArrayList<Visitable>();
+		items.addAll(FacUse.getEventList());
+		items.addAll(FacUse.getInspections());
 
-	public FacilityUse getFacilityUse() {
-		return facilityUse;
+
+		for (Visitable v: items) {
+			v.accept(visitor);
+		}
+
+		double totalUsage = visitor.getTotalUsage();
+
+		return totalUsage;
 	}
 
 }

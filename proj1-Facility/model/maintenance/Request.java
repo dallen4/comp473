@@ -1,5 +1,6 @@
 package model.maintenance;
 
+import model.Visitor;
 import model.facility.Occurrence;
 
 import java.text.ParseException;
@@ -245,5 +246,10 @@ public class Request extends Occurrence implements IRequest, Observer {
 		} else {
 			return;
 		}
+	}
+
+	@Override
+	public void accept(Visitor visitor) {
+		visitor.visit(this);
 	}
 }

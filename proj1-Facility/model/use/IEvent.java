@@ -16,5 +16,7 @@ public interface IEvent {
     public boolean setID(int id);
     public boolean setFacID (int id);
     public int getFacID();
+    public double getEstimatedDuration();
+    public void setEstimatedDuration(double estimatedInspectionTime);
 
 }

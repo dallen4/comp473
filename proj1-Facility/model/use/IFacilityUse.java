@@ -3,7 +3,6 @@ package model.use;
 
 import java.util.List;
 import model.facility.Facility;
-import model.facility.Inspection;
 
 public interface IFacilityUse {
 	
@@ -17,6 +16,8 @@ public interface IFacilityUse {
 
     boolean assignFacilityToUse(String eventDate, String eventName, int eventID, int facID, String dateCreated, String dateScheduled);
 
-    public boolean addInspection(int id, String date, String insp, boolean com, int facID);
+    public boolean addInspection(int id, String date, String insp, boolean com, int facID, double time);
 	public FacilityUse getFacilityUse ();
+	public List<Event> getEventList();
+	public List<Inspection> getInspections();
 }

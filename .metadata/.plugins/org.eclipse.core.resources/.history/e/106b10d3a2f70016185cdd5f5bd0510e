@@ -2,7 +2,7 @@ package model.use;
 
 import java.util.List;
 
-import model.facility.Inspection;
+import model.use.Inspection;
 import model.use.IFacilityUse;
 
 public class FacilityUser implements IFacilityUse {

@@ -1,6 +1,5 @@
 package model.use;
 
-import model.facility.Inspection;
 import model.facility.Facility;
 
 import java.text.ParseException;
@@ -56,8 +55,8 @@ public class FacilityUse implements IFacilityUse {
     }
 
     @Override
-    public boolean addInspection(int id, String date, String insp, boolean com, int facID) {
-        Inspection newInspection = new Inspection(id,date,insp,com,facID);
+    public boolean addInspection(int id, String date, String insp, boolean com, int facID, double time) {
+        Inspection newInspection = new Inspection(id,date,insp,com,facID, time);
         Inspections.add(newInspection);
         System.out.println("Inspection with Details: " + newInspection.getInfo() + "Has been added to inspection list");
         return true;

@@ -9,7 +9,7 @@
 
 	<context:component-scan base-package="model"/>
 
-	<bean id="inspection" class="model.facility.Inspection" scope="prototype"/>
+	<bean id="inspection" class="model.use.Inspection" scope="prototype"/>
 
 	<bean id="request" class="model.maintenance.Request" scope="prototype"/>
 
@@ -41,13 +41,11 @@
 		</property>
 	</bean>
 
-	<bean id="manager" class="model.facility.Manager" scope="prototype">
+	<bean id="manager" class="client.Manager" scope="prototype">
 		<property name="Facilities">
 			<list>
 				<ref bean="facility"/>
 			</list>
 		</property>
-		<property name="facMaint" ref="maintenance"></property>
-		<property name="facilityUse" ref="facilityUse"></property>
 	</bean>
 </beans>

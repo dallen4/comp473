@@ -1,4 +1,4 @@
-package model.facility;
+package model.use;
 
 
 /**
@@ -17,5 +17,7 @@ public interface IInspection {
     public boolean setDateScheduled(String date);
     public boolean setFacID (int id);
     public boolean setCompleted (boolean status);
+    public double getEstimatedInspectionTime();
+    public void setEstimatedInspectionTime(double estimatedInspectionTime);
 
 }

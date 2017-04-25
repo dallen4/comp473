@@ -1,12 +1,10 @@
-package view;
+package client;
 
 import model.facility.*;
 import model.maintenance.IMaintenance;
 import model.maintenance.IRequest;
 import model.maintenance.Request;
-import model.use.Event;
-import model.use.IEvent;
-import model.use.IFacilityUse;
+import model.use.*;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -26,14 +24,12 @@ public class Main {
 
 		System.out.println("Creating Manager object...");
 
-		Manager manager = (Manager)context.getBean("manager");
+		ManagerFacade manager = (ManagerFacade) context.getBean("manager");
 
 
-		List<Facility> facilityList = manager.getFacilities();
+		List<Facility> facilityList = manager.getManager().getFacilities();
 
-		System.out.println("");
-		System.out.println("***** Creating Facilities *****");
-		System.out.println("");
+		System.out.println("\n***** Creating Facilities *****\n");
 
 		IFacility facility1 = (IFacility) context.getBean("facility");
 		facility1.setID(1);
@@ -68,6 +64,8 @@ public class Main {
 		System.out.println();
 
 		System.out.println("\n\nBuilding Facility Maintenance objects...");
+
+		manager.getManager().setFacilities(facilityList);
 
 		//Instantiating Maintenance
 
@@ -132,6 +130,7 @@ public class Main {
 		event2.setID(1);
 		event2.setDateScheduled("20170610");
 		event2.setEventName("Engagement Party");
+		event2.setEstimatedDuration(15.5);
 
 		System.out.println("Adding event 2 to the event list...\n");
 
@@ -152,6 +151,7 @@ public class Main {
 		inspection1.setCompleted(false);
 		inspection1.setDateScheduled("20170804");
 		inspection1.setInspector("Inspector Gadget");
+		inspection1.setEstimatedInspectionTime(6);
 
 		IInspection inspection2 = (IInspection) context.getBean("inspection");
 		inspection2.setID(1);
@@ -166,6 +166,8 @@ public class Main {
 		System.out.println(facilityUse.getFacilityUse().getInspections().get(1).toString());
 		System.out.println(facilityUse.getFacilityUse().getInspections().get(2).toString());
 
+		manager.getManager().setFacilityUse(facilityUse);
+
 
 
 		// Observer Tests
@@ -173,7 +175,7 @@ public class Main {
 		System.out.println("***** Starting Observer Tests *****");
 		System.out.println("");
 
-		IInspection inspection4 = new Inspection((Subject)subject);
+		Occurrence inspection4 = new Inspection((Subject)subject);
 		IInspection inspection5 = new Inspection((Subject)subject);
 		IInspection inspection6 = new Inspection((Subject)subject);
 		inspection4.setFacID(1);
@@ -232,6 +234,9 @@ public class Main {
 
 		System.out.println("");
 		System.out.println("***** End of Obeserver Tests  *****");
+
+		System.out.println("Total facility usage: " + manager.getManager().calculateFacilityUsage());
+
 
 	}
 
